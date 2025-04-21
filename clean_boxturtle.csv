@@ -1,0 +1,609 @@
+team_member_name,year,air_temperature_f,rain_in_last_24_hours,recapture,status,turtle_name,tag_number,straight_carapace_length_mm,shell_height_at_hinge_mm,max_carapace_width_mm,sex,eye_color,count,direction,crossing_road,stationary,driving_condition,substrate,habitat,years_since_hurricane
+Adam Kaeser,2019,NA,No,No,1,JB Sleeper,M605,177,NA,NA,0,Unknown,15,stationary,0,1,good,organic_cover,brushy_cover,1
+Mary Mittiga,2018,NA,No,No,1,Firefly,M020,166,74,129,NA,Unknown,6,unknown,0,0,good,exposed_organic,open_green_area,0
+Adam Kaeser,2018,NA,Not sure,No,1,Hurry-along Michael,M665,205,NA,NA,0,yellow,23,stationary,0,1,good,exposed_organic,open_green_area,0
+Adam Kaeser,2018,NA,Yes,No,1,Pinstripe,B489,145,NA,110,0,Unknown,2,stationary,0,1,good,organic_cover,brushy_cover,0
+Lisa Keppner,2019,71,No,No,1,Berry,M081,155.5,72.5,117.5,1,Gray,5,east,0,0,good,organic_cover,brushy_cover,1
+Sandy Pursifull,2019,77,No,No,1,Chipper,B525,171,70,137,0,brown,21,east,0,0,good,exposed_organic,open_green_area,1
+Sandy Pursifull,2018,NA,Not sure,No,1,Sweet Pea,M339,106.5,NA,NA,1,Unknown,16,unknown,0,0,good,exposed_organic,open_green_area,0
+Sandy Pursifull,2018,NA,Not sure,No,1,Aquarius,M920,165,NA,NA,0,other,22,unknown,0,0,good,exposed_organic,open_green_area,0
+Sandy Pursifull,2018,NA,No,No,1,Romeo,B524,184,NA,NA,0,red,3,unknown,0,0,good,exposed_organic,open_green_area,0
+Adam Kaeser,2019,71,Yes,No,1,Finn,M484,98,47,76,0,brown,2,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,71,Yes,No,1,Conner,M810,169,69,120,0,red,9,west,0,0,good,exposed_organic,open_green_area,1
+Lisa Keppner,2019,74,No,No,1,Tucker,M373,188,76,137,0,brown,4,stationary,0,1,good,organic_cover,brushy_cover,1
+Adam Kaeser,2019,80,No,No,1,Gizzy,B500,135,63,104,0,brown,3,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,72,No,No,1,Goldenrod,B501,157,72,118,1,red,3,north,0,0,good,organic_cover,open_green_area,1
+Lisa Keppner,2019,83,No,Yes,1,Berry,M081,157,76,117,1,Gray,5,south,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,71,No,No,1,Blue Runna,B502,163,68,125,0,brown,14,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,81,No,No,1,Renegade,B503,185,75,147,0,brown,4,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,1
+Lisa Keppner,2019,86,No,No,1,Oliver,M387,170,73,122,0,red,4,unknown,0,0,good,organic_cover,brushy_cover,1
+Adam Kaeser,2019,71,No,No,1,Boxcar,B504,160,72,118,0,Unknown,5,west,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,76,No,No,1,Buster,B505,167,70,130,0,brown,4,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,85,Yes,Yes,1,JB Sleeper,M605,176,68,135,0,brown,15,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,76,Yes,No,1,Boris Shelton,B506,188,79,147,0,brown,6,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,82,No,No,1,Sassy,M711,160,87,126,1,yellow,20,north,0,0,good,exposed_organic,open_green_area,1
+kirsten,2019,80,Not sure,No,1,Adam,M199,126.5,57,97.5,0,brown,8,unknown,0,0,good,other,on_road_or_side_walk,1
+Adam Kaeser,2019,82,Yes,No,1,Stinky Old Hank,M719,195,74,144,0,Unknown,23,north,0,0,good,exposed_organic,open_green_area,1
+Lisa Keppner,2019,76,Yes,no,1,Dusky,M378,150,68,112,1,brown,5,north,0,0,good,organic_cover,brushy_cover,1
+Adam Kaeser,2019,84,Yes,No,1,Tabitha,M210,169.5,73,130,1,brown,5,west,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,84,No,No,1,Herman,M802,170,73,132,0,brown,12,east,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,84,No,No,1,Rezvan,M798,152,71,119,1,brown,16,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Patty Kelly,2019,89,No,No,1,Mr White,M121,192,87,142,0,brown,2,south,0,0,good,exposed_organic,on_road_or_side_walk,1
+Adam Kaeser,2019,80,Yes,No,1,Rebecca,M214,163,73,127,1,brown,2,other,0,0,good,exposed_organic,open_green_area,1
+Lisa Keppner,2019,80,Yes,Yes,1,Berry,M081,156.5,77,118.5,1,Gray,5,stationary,0,1,good,exposed_organic,open_green_area,1
+Danielle Bumgardner,2019,83,No,No,1,Lagatha,M760,175,84,142,1,brown,8,south,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,80,No,No,1,Lilly,M217,152,64,114,1,brown,3,west,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,80,No,No,1,Star,M218,103,48,85,0,Unknown,5,east,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,81,No,No,1,Roscoe,M871,187,68,132,0,brown,12,east,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,82,No,No,1,Benji,M933,178,70,130,0,brown,22,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,76,No,No,1,Willow,M232,154,70,113,1,brown,5,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,74,No,No,1,Higgins,M233,158.5,67,129,0,Unknown,7,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,77,No,Yes,1,Adam,M199,133,56,103,0,other,8,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Lydia Ambrose,2019,82,Yes,No,1,Toni,M608,165,NA,124,0,brown,4,north,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,86,Yes,No,1,Thor,M961,196,76,145,0,brown,10,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,82,No,No,1,Sally,M585,156.5,79,127,1,Unknown,5,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,77,No,No,1,Terrance Pindopalm,M237,182,74,136.5,0,brown,3,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,79,No,No,1,Reuben,M238,174,74,129,0,brown,16,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Sandy Pursifull,2019,87,Yes,No,1,Ginger,B526,169,75,127,1,brown,7,unknown,0,0,good,exposed_organic,open_green_area,1
+Lisa Keppner,2019,79,Yes,No,1,Idris,M088,181,89,132,0,brown,3,south,1,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,82,No,No,1,Moana,M240,162,70,129,1,other,24,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,82,Yes,No,1,Tamatoa,M938,197,75,144,0,other,8,west,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,82,Yes,No,1,Moana,M240,162,70,129,1,Unknown,24,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,81,Yes,No,1,Jackson,M939,202,78,147,0,brown,38,stationary,0,1,good,organic_cover,brushy_cover,1
+Adam Kaeser,2019,76,Yes,No,1,Low Ryder,M794,173,70,134,0,brown,23,south,0,0,good,organic_cover,open_green_area,1
+Adam Kaeser,2019,77,No,No,1,Misty,M244,163,68,128,1,Unknown,9,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,78,No,No,1,Curb Climber,M245,183,76,136,0,orange,11,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,78,No,No,1,Bullseye,M246,162,70,124,0,Unknown,2,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,80,Yes,No,1,Jumbo,M247,202,80,148,0,brown,8,stationary,0,1,good,organic_cover,open_green_area,1
+Adam Kaeser,2019,94,No,No,1,Andre the Giant,M248,215,87,162,0,red,3,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,76,No,No,1,Felippe (Flip),M806,192,76,145,0,Unknown,5,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,77,No,No,1,Fugitive (Fugi),M250,187,77,139,0,brown,13,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+kirsten,2019,90,No,Yes,1,Misty,M244,161.5,71.5,126.5,1,brown,9,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,78,No,No,1,Bird Dog,M253,192,75,141,0,brown,4,stationary,0,1,good,organic_cover,open_green_area,1
+Adam Kaeser,2019,77,No,No,1,Rabbitsfoot,M252,151,60,113,0,Unknown,12,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Mary Mittiga,2019,88,No,No,1,El Capitan,M023,158.1,58.9,114.3,0,brown,2,south,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,81,No,No,1,Casper,M256,179,71,144,0,brown,3,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,80,No,No,1,Whisper,M255,151.5,66,115.5,1,Unknown,2,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,81,No,No,1,Lannie Roadster,M254,179,76.5,135,0,brown,3,east,0,0,good,exposed_organic,open_green_area,1
+Mary Mittiga,2019,76,No,No,1,Half Dome,M024,148.7,66.9,120.2,0,Unknown,5,east,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,91,No,No,1,Freddie,M259,185.5,75,146,0,brown,3,east,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,76,No,No,1,Little Miss Bear Paws,M260,145,63,108,1,brown,5,stationary,0,1,good,exposed_organic,open_green_area,1
+Lisa Keppner,2019,71,No,Yes,1,Berry,M081,157.5,78,118,1,Gray,5,south,0,0,good,exposed_organic,open_green_area,1
+Maureen Walsh,2019,81,Not sure,Yes,1,Ginger,B526,175,NA,125,1,brown,7,west,1,0,bad,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,80,Yes,No,1,Shadow Walker,M265,169,73,121,0,red,7,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,80,Yes,Unknown,1,Polkadot #10,M264,187,78.5,151,0,brown,2,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,78,No,No,1,Owen Koch,M266,180,75,135,0,brown,21,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,1
+Lisa Keppner,2019,84,No,Yes,1,Berry,M081,158,80,118,1,Gray,5,unknown,0,0,good,organic_cover,brushy_cover,1
+Adam Kaeser,2019,74,No,No,1,Ivy,M267,146,75,123,1,brown,3,stationary,0,1,good,organic_cover,brushy_cover,1
+Danielle Bumgardner,2019,66,No,No,1,Harvy,M065,178,76,142,0,brown,2,stationary,0,1,good,exposed_organic,open_green_area,1
+Danielle Bumgardner,2019,67,No,No,1,Ava,M067,180,73,132,1,brown,2,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,72,No,No,1,Shot-putt Shelly,M951,139.3,72,117,1,brown,7,unknown,1,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Danielle Bumgardner,2019,80,Not sure,No,1,Ragnar,M070,185,86,142,0,brown,4,stationary,0,1,good,exposed_organic,open_green_area,1
+Danielle Bumgardner,2019,80,Not sure,No,1,Sigi,M069,165,71,114,1,brown,2,stationary,0,1,good,exposed_organic,open_green_area,1
+Danielle Bumgardner,2019,80,Not sure,No,1,Rolly,M068,198,81,142,0,red,2,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,75,Yes,No,1,Nestor,M271,185.5,76,142,0,brown,24,stationary,0,1,bad,exposed_organic,open_green_area,1
+Danielle Bumgardner,2019,83,No,No,1,Jessie,M072,145,79,117,1,brown,2,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2019,78,No,No,1,Drew Koch,M272,187,77,140,0,brown,3,unknown,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Danielle Bumgardner,2019,NA,Not sure,No,1,Squirmy Wormy,M073,147,84,122,1,brown,3,south,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,82,Yes,No,1,Frau Olga,M921,154,68,127,1,brown,13,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,81,Yes,No,1,Ruby,M525,169,70,123,1,brown,11,stationary,0,1,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,79,No,No,1,Scully,M275,180,70,139,0,brown,2,other,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2019,80,Yes,No,1,Evil Knievel,M970,179.5,75,133.5,0,brown,6,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,1
+Danielle Bumgardner,2019,79,Yes,Yes,1,Squirmy Wormy,M073,147,84,122,1,brown,3,south,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Faith Bell,2018,84,Yes,No,1,Chip,M120,158.75,82.55,127,0,brown,3,east,0,0,good,organic_cover,brushy_cover,0
+Adam Kaeser,2019,61,No,No,1,Miss Wibberley,M926,159,77,123,1,brown,4,east,0,0,good,exposed_organic,open_green_area,1
+Adam Kaeser,2020,66,No,No,1,Wyatt Koch,M720,198,79,145,0,other,2,other,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+kirsten,2020,64,no,No,1,Fernando,M279,171,69,127,0,other,2,stationary,0,1,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,70,no,No,1,Bunkers,M281,185,83,137,0,other,3,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Lisa Keppner,2020,74,No,No,1,Dusky,M378,143,65,113,1,Unknown,5,unknown,0,0,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,66,No,No,1,Big Patrick,M283,163,74,125,0,Brown,10,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,72,No,No,1,Blondie,M285,185,78,140,0,Unknown,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,70,No,No,1,Herman,M802,169,76,131,0,Brown,12,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,71,No,No,1,Tortie,M287,170,71,124,0,Unknown,2,unknown,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,73,No,No,1,Buttercup,M288,120,51,90,0,Unknown,6,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,71,No,No,1,Freda,M289,151,71,115,0,Unknown,5,east,0,0,good,exposed_organic,open_green_area,2
+Lydia Ambrose,2020,72,No,No,1,Moe,M040,183,90,138,0,Brown,2,stationary,0,1,good,organic_cover,on_road_or_side_walk,2
+Adam Kaeser,2020,69,No,No,1,Barney Rumble,M807,174,NA,135,0,Unknown,2,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Lisa Keppner,2020,75,No,No,1,Phoenix,M091,179,71,130,0,Other,4,unknown,0,0,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,74,No,No,1,Polly Frognasher,M290,150,NA,118,0,Unknown,3,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,69,No,No,1,Womper,M293,196,86,150,0,Brown,10,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,70,No,No,1,Bayou Jesus,M294,174,68,135,0,Unknown,2,south,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,71,No,No,1,Lacy,M295,166,74,135,0,Unknown,7,stationary,0,1,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,77,No,no,1,Scar,M561,168,83,126,1,brown,3,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,73,No,No,1,Little Buddy,M296,110.5,52,86,0,Unknown,10,stationary,0,1,good,exposed_organic,open_green_area,2
+kirsten,2020,76,No,No,1,Grumpy,M672,164,73.5,125,0,Brown,7,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,79,No,no,1,George Washington,M301,180,88,132,0,Brown,3,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,74,No,No,1,Claire (of the North),M340,162,71,121,0,Unknown,3,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,75,No,No,1,Mulberry,M341,135,63,108,0,Brown,2,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,77,No,yes,1,Ragnar,M070,185,83,142,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,2
+kirsten,2020,69,No,No,1,Roberta,M674,141,65,106,0,Brown,5,stationary,0,1,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,66,Yes,No,1,Joy,M342,149,77,124,0,Brown,3,east,1,0,bad,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,77,No,no,1,Angel,E200,112,46,91,0,brown,5,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,75,No,Yes,1,Holly Wormburrow,M345,168,78,131,0,Brown,10,north,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,74,No,No,1,Miss Bonita,M346,163,71.5,123,0,Brown,5,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,75,No,No,1,Helen of the Courtyard,M347,171.5,71,135,0,Unknown,2,east,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,74,Yes,No,1,Jasmine,M348,167,72.5,122,0,Brown,11,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Lisa Keppner,2020,63,No,No,1,Macho,M093,177,82,140,0,Other,2,NA,0,NA,good,organic_cover,open_green_area,2
+Lisa Keppner,2020,65,No,Yes,1,Oliver,M387,170,73.5,122,0,Brown,4,west,0,0,good,organic_cover,open_green_area,2
+Lisa Keppner,2020,67,No,No,1,Ditsy II,M780,168.5,87,132,0,Brown,3,west,0,0,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,63,Yes,No,1,Flash,M488,167,72,129,0,Brown,6,unknown,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Lisa Keppner,2020,79,Yes,No,1,Skeletor,M391,164,74,130,0,Brown,5,stationary,0,1,good,organic_cover,open_green_area,2
+Danielle Bumgardner,2020,71,Yes,no,1,Grimes,M225,196,76,148,0,red,11,stationary,0,1,good,water,waterbody,2
+Danielle Bumgardner,2020,71,Yes,no,1,Judith,M314,167,67,122,1,brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,67,Yes,No,1,Aphrodite,M298,170,NA,132,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,NA,No,no,1,Barry,M563,169,68,134,0,red,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,77,No,no,1,Sunny Girl,M635,172,75,131,1,brown,10,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,70,No,No,1,Fred Jr.,M353,162.5,70,123,0,Brown,7,unknown,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,71,No,No,1,Bob,M354,176,72,136,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,78,No,No,1,Tina Turla,M357,181,77,143,0,Brown,3,stationary,0,1,good,water,waterbody,2
+Danielle Bumgardner,2020,79,No,no,1,Maggie,M315,170,86,132,1,brown,2,stationary,0,1,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,77,No,No,1,Lyra,M632,162,73,125,0,Brown,7,unknown,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,75,No,No,1,Mayday,M359,108,48.5,88,0,Unknown,2,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Lisa Keppner,2020,68,No,NA,1,Avery,M785,146,72,120,0,Brown,2,south,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Lydia Ambrose,2020,73,No,No,1,Blanco,M321,172,74,133,0,Brown,7,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,73,No,No,1,Cinco de Mayo,M320,177,81,141.5,0,Brown,3,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,84,No,no,1,Hermione,M696,154,78,115,1,NA,5,stationary,0,1,good,exposed_organic,other,2
+kirsten,2020,77,Yes,No,1,Donald,M500,56,73,121,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,85,No,No,1,Hercules,M805,210,86,161,0,Brown,18,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,85,No,No,1,Frodo,M323,175,70,125,0,Brown,3,unknown,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,76,No,No,1,Senor Ojo Rojo,M355,190,NA,133,0,Red,4,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,77,No,No,1,Tripod,M324,171,72,129,0,Brown,17,stationary,0,1,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,80,Yes,no,1,Gormon,M308,162,74,126,0,brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,74,Yes,No,1,4-Way Wilbur,M356,136,NA,106,0,Unknown,4,stationary,0,1,good,organic_cover,open_green_area,2
+Danielle Bumgardner,2020,NA,Yes,no,1,Klaus,M313,195,76,140,0,brown,2,west,0,0,good,organic_cover,brushy_cover,2
+Danielle Bumgardner,2020,86,yes,no,1,Timothy Tuttle,E185,187,78,142,0,brown,5,stationary,0,1,good,organic_cover,brushy_cover,2
+Danielle Bumgardner,2020,83,No,no,1,CP Bailey,E111,151,74,113,1,brown,3,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+kirsten,2020,82,No,No,1,Chevy,M194,148,61,111,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,79,Yes,No,1,Luke Duke,M337,191,NA,144,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,79,Yes,No,1,Uncle Jessie,M338,184,NA,134,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,80,Yes,No,1,Whippersnapper,M325,151,62,111,0,Yellow,7,unknown,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,77,No,Yes,1,NA,M339,161,70,128,0,Unknown,16,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,72,No,No,1,Flipper,M329,135,58,105,0,Brown,6,unknown,0,0,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,NA,NA,yes,1,CP Bailey,E111,151,74,113,1,Brown,3,west,0,0,good,exposed_organic,open_green_area,2
+Linda Yori,2020,77,Yes,No,1,Gunter,M380,175.62,75.35,124.46,0,Brown,2,stationary,0,1,bad,organic_cover,brushy_cover,2
+Adam Kaeser,2020,78,Yes,No,1,Catherine,M331,149,62,114,0,Brown,19,east,1,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,79,No,No,1,Dodd Jr.,M327,176,NA,136,0,Brown,2,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Linda Yori,2020,87,Yes,No,1,Oliver,M387,169,74.12,119.51,0,Red,4,stationary,0,1,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,75,Yes,No,1,Cinco de Julio,M336,192,72,145,0,Brown,2,east,1,0,bad,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,75,Yes,No,1,Ladybug,M332,112,48.5,86,0,Unknown,2,stationary,0,1,bad,organic_cover,open_green_area,2
+Danielle Bumgardner,2020,77,Yes,no,1,Willy,M310,67,31,49,0,NA,2,west,0,0,bad,exposed_organic,open_green_area,2
+Adam Kaeser,2020,77,Yes,No,1,Gertie,M466,163,NA,120,0,Unknown,2,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,NA,Yes,No,1,Colleen,M467,167,79,125,0,Brown,7,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,77,Yes,No,1,Sneaky,M461,134,58,108,0,Unknown,3,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,77,No,No,1,Darkhorse,M46,205,NA,141,0,Brown,7,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,75,Yes,Yes,1,Chewbacca,M462,177,77,146,0,Brown,2,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,81,Yes,No,1,Persephone,M963,171,81,132,0,Brown,4,north,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,76,Yes,No,1,Twyla,M464,150,NA,124,0,Brown,2,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,82,No,No,1,Risky,M470,178,NA,137,0,Unknown,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,82,No,No,1,Townie Bob,M471,181,NA,143,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,82,No,No,1,Little John,M472,94,NA,75,0,Unknown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,82,No,No,1,Quinton,M473,140,NA,112,0,Unknown,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,87,No,No,1,Pauline,65,171,76,127,0,Brown,28,stationary,0,1,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,78,No,No,1,Sunrise,M476,166,NA,NA,0,Brown,5,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,79,No,No,1,Roberta,M674,144,NA,114,0,Brown,5,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2019,76,Yes,No,1,Boris Shelton,B506,188,79,147,0,Brown,6,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Linda Yori,2020,84,No,No,1,Oliver,M387,175.07,70.97,119.25,0,Red,4,stationary,0,1,good,organic_cover,brushy_cover,2
+Adam Kaeser,2019,76,Yes,No,1,Boris Shelton,B506,188,79,147,0,Brown,6,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,1
+Adam Kaeser,2020,79,No,No,1,Pineapple,M657,144,64,113,0,Unknown,4,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,79,No,No,1,Rocky Bonita,M820,172,76,136,0,Unknown,3,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,72,Yes,No,1,Finn,M484,133,NA,108,0,Unknown,2,west,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,72,Yes,No,1,Scrappy,M491,129,NA,98,0,Unknown,3,east,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+kirsten,2020,85,Yes,No,1,Jake,M523,161,70,122,0,Brown,2,stationary,0,1,good,organic_cover,brushy_cover,2
+Adam Kaeser,2020,74,Yes,No,1,Gnasher,M485,143,NA,114,0,Unknown,2,east,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,75,Yes,No,1,Captain Dexter,M486,162,74,122.5,0,Unknown,2,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,75,Yes,No,1,Gray,M487,149,68,116.5,0,Unknown,9,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,77,Yes,No,1,Marco,M49,195,73,145,0,Brown,2,south,1,0,bad,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,88,Yes,no,1,Olivander,M449,187,74,147,0,brown,2,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,79,No,No,1,Moonbeam,M495,146,NA,139,0,Brown,2,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,81,Yes,No,1,Moldy,M499,138,66.5,138,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,81,Yes,No,1,Joe Joe,492,154,71,127,0,NA,4,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,80,Yes,No,1,Flower,M500,158,76,120,0,Brown,3,unknown,0,0,bad,exposed_organic,open_green_area,2
+Adam Kaeser,2020,82,Yes,No,1,Thrasher,M588,155,72,120.5,0,Brown,9,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,82,Yes,No,1,Hush Puppy,M790,138,NA,118,0,Unknown,4,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,81,Yes,no,1,Clyde,E119,180,77,139,0,brown,13,stationary,0,1,good,exposed_organic,open_green_area,2
+Patrice Couch,2020,81,Yes,No,1,William,M400,163.5,72,126,0,Brown,10,east,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,86,No,No,1,Taco,M533,160,71,129,0,Red,7,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,83,No,No,1,Rosebud,M532,151,68,120,0,Unknown,8,unknown,0,0,good,organic_cover,open_green_area,2
+Danielle Bumgardner,2020,78,No,No,1,Neville,M442,169,71,138,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,79,No,No,1,Sprague,M441,166,75,124,0,NA,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,91,No,No,1,Wiggles,M456,175,73,129,0,Brown,3,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Patrice Couch,2020,86,No,No,1,Edward,M611,120.5,52.4,93.2,0,Brown,3,west,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,78,Yes,No,1,Cinco de Seppie,M715,172,79,132,0,Red,4,west,0,0,good,asphalt_or_concrete,open_green_area,2
+Adam Kaeser,2020,78,No,No,1,Tilly,M944,159,69,124,0,Brown,7,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,74,No,No,1,Dirty Nellie,M538,141,69,117,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,76,No,yes,1,George Washington,M301,180,88,132,0,Brown,3,north,0,0,good,organic_cover,brushy_cover,2
+Leah Koehler,2020,78,Yes,No,1,Goliath,M430,186,69,135,0,Brown,2,north,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,72,No,No,1,Bigfoot,M541,190,80,149,0,Brown,3,stationary,0,1,good,organic_cover,open_green_area,2
+Adam Kaeser,2020,72,No,No,1,Princess Peach,M739,157,76,124,0,Unknown,5,stationary,0,1,good,exposed_organic,open_green_area,2
+kirsten,2020,79,Yes,No,1,Skeletor #2,M529,185,72,141,0,Brown,4,west,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,76,Yes,No,1,Penelope,M544,143,65,111,0,Unknown,2,stationary,0,1,bad,exposed_organic,open_green_area,2
+Adam Kaeser,2020,75,Yes,No,1,Watson (of the Bayou),M545,183,75,146,0,Unknown,3,stationary,0,1,good,exposed_organic,open_green_area,2
+Dan Catizone,2020,76,No,No,1,Woodward,G000,185,78,140,0,Brown,2,south,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,61,Yes,No,1,Herman,M802,175,75,131.5,0,Brown,12,north,0,0,good,exposed_organic,open_green_area,2
+Patrice Couch,2020,73,No,No,1,Durwood,M691,171.08,67.94,130.69,0,Brown,32,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,77,No,No,1,Ichabod,M695,161,74,132,0,Brown,5,west,0,0,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,77,No,No,1,Lupin,M451,178,71,132,0,NA,7,east,0,0,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,78,No,No,1,Izzy,M450,143,63,109,0,Brown,4,west,0,0,good,exposed_organic,open_green_area,2
+Dan Catizone,2020,77,No,No,1,Bruiser,G006,189,90,145,0,Brown,2,NA,0,NA,good,exposed_organic,other,2
+Adam Kaeser,2020,75,No,No,1,Hagrid,M548,210,89,161,0,Brown,4,east,0,0,good,exposed_organic,open_green_area,2
+kirsten,2020,82,No,No,1,Jem,M750,192,79,137,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,83,No,No,1,Big Mike,M551,180,75,136.5,0,Brown,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,84,No,No,1,Creeper,M552,129,65,112,0,Brown,4,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,79,Yes,No,1,Frogger,M553,160,72,130,0,Brown,4,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,83,No,No,1,Benjamin Franklin,M554,187,80,146,0,Brown,9,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Linda Yori,2020,82,No,No,1,Toby,M388,187.24,78,137.39,0,Brown,2,south,0,0,good,exposed_organic,on_road_or_side_walk,2
+Adam Kaeser,2020,78,No,No,1,Monty,M555,184,74,148,0,Unknown,2,stationary,0,1,good,organic_cover,brushy_cover,2
+Patrice Couch,2020,81,Yes,Yes,1,Judith,M684,160.88,73.72,124.14,0,Brown,13,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,72,No,No,1,Scuffy,M556,185,NA,135,0,Brown,5,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Lydia Ambrose,2020,77,No,No,1,Massalinda,M048,168,73,125,0,Brown,2,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+kirsten,2020,72,No,No,1,Buick,M638,177,73,131,0,Brown,11,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Dan Catizone,2020,79,No,No,1,NA,G025,183,75,131,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,72,No,No,1,Scarface #1,M557,174,68,127,0,Brown,13,NA,0,NA,good,NA,NA,2
+Adam Kaeser,2020,72,No,No,1,Bling Bling,M929,146,70,113,0,Brown,8,stationary,0,1,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,72,No,No,1,Tombstone,M559,198,NA,143,0,Unknown,2,west,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2020,71,Yes,No,1,Creme Puff,M581,161,76,130,0,Brown,2,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Patrice Couch,2020,72,No,No,1,Sally,M408,148.08,72.57,116.8,0,Brown,27,stationary,0,1,good,exposed_organic,open_green_area,2
+Sandy Potere,2020,82,Yes,No,1,NA,G027,186,79,129,0,Brown,2,north,0,0,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,75,No,No,1,Herbie,M560,114,50,83,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,75,No,No,1,Scar,M561,168,83,125,0,NA,3,stationary,0,1,good,exposed_organic,open_green_area,2
+Nina Kaufmann,2020,79,No,No,1,Bert,G011,216,98,150,0,Brown,3,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Patrice Couch,2020,75,Yes,No,1,Casper,M618,178.72,83.39,137.48,0,Red,5,stationary,0,1,good,organic_cover,brushy_cover,2
+Sandy Potere,2020,82,Yes,No,1,Squirrely,G028,174,88,133,0,Brown,4,east,0,0,bad,exposed_organic,open_green_area,2
+Adam Kaeser,2020,71,No,No,1,Benjamin Button,M584,121,NA,99,0,Brown,2,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,73,No,No,1,NA,M585,157,NA,130,0,Unknown,5,south,0,0,good,exposed_organic,open_green_area,2
+Danielle Bumgardner,2020,81,No,No,1,Barry,M563,171,77,134,0,Red,2,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,77,No,No,1,Lance,M586,174,73,132,0,Unknown,5,stationary,0,1,good,exposed_organic,open_green_area,2
+Nina Kaufmann,2020,78,No,No,1,Sheila,G013,173,58,124,0,Brown,2,east,0,0,good,organic_cover,open_green_area,2
+Sandy Potere,2020,74,No,Yes,1,NA,G027,186,79,129,0,Brown,2,north,0,0,good,exposed_organic,open_green_area,2
+Sandy Potere,2020,75,No,No,1,Carson,G030,162,82,118,0,Brown,2,west,1,0,good,organic_cover,on_road_or_side_walk,2
+Adam Kaeser,2020,66,No,No,1,Peppercorndog,M587,137,60,107,0,Unknown,3,unknown,0,0,good,asphalt_or_concrete,on_road_or_side_walk,2
+Danielle Bumgardner,2020,63,No,No,1,Lagatha,M760,171,82,136,0,Brown,8,NA,1,NA,good,asphalt_or_concrete,on_road_or_side_walk,2
+Adam Kaeser,2020,71,Yes,No,1,Thrasher,M588,158,70,120,0,Brown,9,stationary,0,1,good,exposed_organic,open_green_area,2
+kirsten,2020,68,Yes,No,1,Frosty,M526,171,65,126,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,2
+Nina Kaufmann,2020,75,No,No,1,Handsome,G016,195,70,49,0,Brown,2,north,0,0,good,exposed_organic,on_road_or_side_walk,2
+Adam Kaeser,2020,56,No,No,1,Trask,M589,78,35,64,0,Unknown,2,NA,0,NA,good,NA,brushy_cover,2
+Adam Kaeser,2021,69,Yes,No,1,Survivor,M593,176,75,130,0,Unknown,8,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Patrice Couch,2020,73,Yes,No,1,Clarence,M410,188.57,73.6,148.46,0,Brown,13,north,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2021,66,Yes,No,1,Seamus Koch,M594,184,78,140,0,Brown,4,east,0,0,good,organic_cover,open_green_area,3
+Adam Kaeser,2021,62,Yes,No,1,Benji,M933,176,70,128,0,Red,22,stationary,0,1,good,organic_cover,open_green_area,3
+Patrice Couch,2021,72,No,Yes,1,Durwood,M691,171.91,68.45,130.76,0,Brown,32,north,0,0,good,exposed_organic,open_green_area,3
+Nina Kaufmann,2021,69,No,No,1,Hasselhoff,G058,174,61,125,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,3
+Nina Kaufmann,2021,71,Yes,No,1,St Patrick,G060,197,83,137,0,Brown,3,east,1,0,good,exposed_organic,on_road_or_side_walk,3
+Nina Kaufmann,2021,72,Yes,No,1,Jimmy,G061,171,82,144,0,Brown,2,west,0,0,bad,exposed_organic,open_green_area,3
+Nina Kaufmann,2021,71,Yes,No,1,Clarence,G062,190,29,57,0,Brown,3,south,0,0,good,organic_cover,open_green_area,3
+Nina Kaufmann,2021,71,Yes,No,1,Clarence,G062,190,29,57,0,Brown,3,south,0,0,good,organic_cover,open_green_area,3
+Nina Kaufmann,2021,70,No,NA,1,Fox,G064,192,75,150,0,Brown,2,west,0,0,good,organic_cover,brushy_cover,3
+Michael Palandri,2021,75,No,No,1,Ellie,G102,158,74,122,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,70,Yes,No,1,Norm,M596,198,NA,148,0,NA,2,south,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,72,Not sure,No,1,Ben,M412,166.9,78.27,134.97,0,Brown,2,east,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,73,No,Yes,1,Sally,M408,148.56,73.14,116.91,0,Brown,27,stationary,0,1,good,organic_cover,open_green_area,3
+Sandy Potere,2021,67,No,Yes,1,Squirrely,G028,178,88,133,0,Brown,4,west,0,0,good,exposed_organic,open_green_area,3
+Lisa Keppner,2021,77,No,Yes,1,Momma T,M363,168,81,130,0,Brown,2,unknown,0,0,good,exposed_organic,brushy_cover,3
+Adam Kaeser,2021,69,No,No,1,Mossyshell,M600,188,NA,145,0,Unknown,2,south,0,0,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,65,Yes,No,1,Mr. Whitehead,M601,164,72,125,0,Brown,5,north,0,0,bad,exposed_organic,open_green_area,3
+Adam Kaeser,2021,63,No,No,1,April,M602,173,75,134,0,Unknown,7,east,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,64,Yes,No,1,Mr. Colorado,M416,197.28,73.9,147.58,0,Brown,8,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Patrice Couch,2021,68,Yes,No,1,Judson,M708,120.54,55.35,90.87,0,Brown,22,north,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,79,No,yes,1,Judith,M684,160.83,80.56,122.1,0,Brown,13,stationary,0,1,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,77,No,Yes,1,Lupin,M451,179.76,73.92,139.46,0,Brown,7,north,0,0,good,asphalt_or_concrete,open_green_area,3
+Sandy Potere,2021,74,No,No,1,Shelly,G036,142,72,108,0,Brown,2,east,0,0,good,organic_cover,open_green_area,3
+Adam Kaeser,2021,74,Yes,No,1,Big Jim Walker,M607,216,NA,166,0,Brown,3,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,82,No,Yes,1,JB Sleeper,M605,177,68,136,0,NA,15,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,73,Yes,No,1,Maisey,M606,165,78,130,0,NA,7,unknown,0,0,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,73,No,Unknown,1,June,M608,153,73,111,0,NA,4,stationary,0,1,good,organic_cover,brushy_cover,3
+Adam Kaeser,2021,85,No,No,1,Fred,M631,104,51,84,0,Brown,9,unknown,0,0,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,73,No,No,1,Bonita Biggens,M805,210,81,162,0,Brown,18,east,0,0,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,77,Yes,No,1,Thunderstruck,M632,166,75,124,0,Brown,7,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,80,Yes,No,1,Frilly Fred,M633,181,72,142,0,Unknown,4,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,79,Yes,No,1,Toto,M635,171,77,131,0,Orange,10,south,0,0,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,79,Yes,No,1,Titan,M634,232,89,170,0,Brown,7,east,0,0,bad,exposed_organic,open_green_area,3
+Adam Kaeser,2021,74,Yes,No,1,Speedy,M637,100,47,81,0,Brown,5,stationary,0,1,bad,asphalt_or_concrete,on_road_or_side_walk,3
+kirsten,2021,79,Yes,No,1,Duke,M525,167,72,122,0,Brown,11,stationary,0,1,good,exposed_organic,open_green_area,3
+kirsten,2021,81,Yes,Unknown,1,Carmelo,M523,160,70,123,0,Brown,2,stationary,0,1,good,organic_cover,brushy_cover,3
+Adam Kaeser,2021,88,No,No,1,Homegirl,M639,160,73,120,0,Brown,2,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,NA,NA,Yes,1,Buick,M638,178,73,131,0,NA,11,NA,1,NA,NA,NA,NA,3
+Adam Kaeser,2021,79,Yes,No,1,Gregory,M822,127,57,98,0,Unknown,6,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,78,No,No,1,Road Runner,M641,204,NA,146,0,Brown,9,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,78,No,No,1,Ruby Slipper,M642,162,NA,119,0,Brown,5,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+N,2021,82,No,No,1,Mullet,G130,180,83,146,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,3
+N,2021,80,Yes,Yes,1,NA,G011,213,90,149,0,NA,3,north,1,0,good,exposed_organic,open_green_area,3
+N,2021,81,No,No,1,Sarah,G117,159,76,113,0,Brown,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+N,2021,83,No,No,1,Romeo,G116,200,90,148,0,Brown,2,north,0,0,good,exposed_organic,open_green_area,3
+N,2021,63,Yes,No,1,Suzanne,G069,161,74,125,0,Brown,2,north,1,0,good,organic_cover,brushy_cover,3
+Sandy Potere,2021,75,Yes,No,1,Shane,G038,187,81,134,0,Red,2,stationary,0,1,bad,organic_cover,brushy_cover,3
+Adam Kaeser,2021,77,No,No,1,Prince Ali of Bunkers Cove,M643,151,67,122,0,Brown,7,unknown,0,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,79,Yes,No,1,Georgette,M644,158,79,126,0,Unknown,5,stationary,0,1,good,organic_cover,open_green_area,3
+Adam Kaeser,2021,77,Yes,No,1,Henry,M645,169,73,126,0,Brown,5,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,77,No,No,1,Jewel #2,M646,66,31,54,0,Unknown,2,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,78,Yes,No,1,Small Fry,M648,128,59,97,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,78,No,No,1,Bonita Bigfoot,M649,180,70,132,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,78,No,No,1,Gizmo Junior,M650,173,73,135,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,76,Yes,No,1,Zig Zag,M651,171,NA,143,0,Unknown,2,stationary,0,1,good,exposed_organic,open_green_area,3
+Lisa Keppner,2021,79,Yes,No,1,Bandit,M370,195,80,150,0,Brown,2,south,0,0,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,75,No,No,1,Tricky Nicky,M652,125,58,97,0,Brown,2,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,74,No,No,1,Andrew Rohan,M655,177,71,130,0,Brown,6,stationary,0,1,good,exposed_organic,open_green_area,3
+Lisa Keppner,2021,73,Not sure,No,1,Ramfos,M372,168,80,135,0,Brown,5,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,78,Yes,No,1,Jude Quinn on the Halfshell,M656,192,77,135,0,Brown,6,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,74,No,No,1,Diggity,M657,156,70,123,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,75,No,No,1,Pretty Boy,M658,160,72,124,0,Red,2,east,0,0,good,exposed_organic,open_green_area,3
+Lisa Keppner,2021,72,No,Yes,1,Idris,M088,183,89,132,0,Brown,3,east,0,0,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,73,No,No,1,Boogie Woogie,M659,84,NA,68,0,Unknown,6,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,3
+kirsten,2021,81,Yes,yes,1,Grumpy,M672,171,74,126,0,Brown,7,north,0,0,NA,exposed_organic,open_green_area,3
+Adam Kaeser,2021,72,No,No,1,Michael No’More,M660,156,NA,130,0,Unknown,2,NA,0,NA,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,72,No,No,1,Palmetta,M661,172,NA,142,0,Brown,4,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,3
+Lisa Keppner,2021,72,Yes,Yes,1,Tucker,M373,194,80,143,0,Brown,4,stationary,0,1,good,organic_cover,brushy_cover,3
+Lisa Keppner,2021,73,Yes,Yes,1,Phoenix,M091,189,75,136,0,Brown,4,west,0,0,good,exposed_organic,open_green_area,3
+Lisa Keppner,2021,64,No,No,1,Ling Kong Louie,M374,165,70,133,0,Brown,3,stationary,0,1,good,organic_cover,brushy_cover,3
+Adam Kaeser,2021,76,No,No,1,Hurry-along Michael,M665,190,75,147,0,Brown,23,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,76,No,No,1,Flint,M666,191,77,138,0,Brown,2,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,59,Yes,No,1,Randall the Reptile,M668,118,54,92,0,Unknown,2,stationary,0,1,good,exposed_organic,open_green_area,3
+Adam Kaeser,2021,71,No,No,1,Nixon,M669,157,67,120,0,Brown,7,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Linda Yori,2021,81,NA,No,1,Tulip,M390,138,74,108,0,Brown,2,south,1,0,good,asphalt_or_concrete,open_green_area,3
+Linda Yori,2021,78,No,Unknown,1,NA,M391,163,73,129,0,Brown,5,west,0,0,bad,exposed_organic,open_green_area,3
+Adam Kaeser,2021,68,Yes,No,1,Santa's Little Helper,M670,96,42,72,0,Unknown,14,north,0,0,bad,exposed_organic,open_green_area,3
+Lisa Keppner,2021,73,No,Yes,1,Ramfos,M372,174,80,135,0,Brown,5,west,0,0,other,asphalt_or_concrete,on_road_or_side_walk,3
+Adam Kaeser,2021,74,No,No,1,Cathy Clawfoot,M711,161,78,127,0,Brown,20,west,0,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Patrice Couch,2022,75,Yes,Yes,1,William,M400,163.52,71.44,125.17,0,Brown,10,south,0,0,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,65,No,No,1,Mudbug,M714,171,80,127,0,Unknown,2,unknown,0,0,good,exposed_organic,open_green_area,4
+kirsten,2022,75,No,Yes,1,NA,M719,188,81,141,0,Brown,23,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,4
+Tony Felty,2022,67,Yes,Yes,1,Lacy,M295,165.15,80.1,135.35,0,NA,7,stationary,0,1,good,organic_cover,open_green_area,4
+Tony Felty,2022,67,No,Yes,1,Duke,M525,167.16,75.69,125,0,Brown,11,stationary,0,1,good,exposed_organic,open_green_area,4
+Tony Felty,2022,68,No,No,1,Jem,M750,186.89,84.65,141.89,0,Orange,4,west,0,0,good,exposed_organic,open_green_area,4
+Tony Felty,2022,68,No,No,1,Bunky,M736,169.66,78.53,134.02,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,67,No,No,1,Lawn Boy,M718,171,NA,138,0,Unknown,2,south,0,0,good,exposed_organic,open_green_area,4
+Lisa Keppner,2022,81,Yes,Yes,1,Idris,M088,183,87,132,0,Brown,3,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Tony Felty,2022,62,No,No,1,Sir Hides-a-Lot,M922,174.83,82.55,133.85,0,Brown,8,north,0,0,good,exposed_organic,open_green_area,4
+Tony Felty,2022,70,No,No,1,Squirt,M739,154.77,84.6,128,0,Unknown,5,south,0,0,good,exposed_organic,open_green_area,4
+Ron White,2022,77,No,No,1,Gibney,M054,180,80,133,0,Yellow,7,west,0,0,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,77,No,No,1,Lawn Rover,M719,195,75,147,0,NA,23,east,0,0,bad,exposed_organic,open_green_area,4
+Adam Kaeser,2022,75,No,No,1,Wyatt Koch,M720,198,NA,153,0,NA,2,west,0,0,bad,exposed_organic,open_green_area,4
+kirsten,2022,76,Yes,No,1,Roberta,M674,146,66,114,0,Brown,5,stationary,0,1,good,water,waterbody,4
+Patrice Couch,2021,80,Yes,No,1,Stormy,M610,159,73,116,0,Brown,9,stationary,0,1,bad,exposed_organic,open_green_area,3
+Lisa Keppner,2022,77,Yes,No,1,Grayskull,M375,174,75,132,0,Brown,2,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,71,No,No,1,Claire (of the Lake),M175,176,NA,138,0,Unknown,7,north,0,0,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,76,No,No,1,Milo,M178,162,75,127,0,Brown,5,other,0,0,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,78,No,No,1,Dos,M920,167,75,130,0,Brown,22,stationary,0,1,good,organic_cover,brushy_cover,4
+Adam Kaeser,2022,77,Yes,No,1,Burgermeister Meisterburger,M179,175,NA,137,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,69,No,Unknown,1,NA,M790,157,NA,129,0,NA,4,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,73,No,No,1,Marlin,M791,182,80,137,0,Brown,3,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,75,No,No,1,Rooster,M792,156,67,120,0,NA,6,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,75,No,No,1,Maverick,M793,184,77,135,0,NA,5,east,0,0,good,exposed_organic,open_green_area,4
+Patrice Couch,2021,72,Yes,Yes,1,Edward,M611,134,59,99,0,Brown,3,west,0,0,bad,exposed_organic,open_green_area,3
+Adam Kaeser,2022,75,Yes,No,1,Georgee,M796,83,35,66,0,Unknown,2,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,76,Yes,No,1,Walt Dewittman,M797,169,71,132,0,Brown,5,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,78,No,No,1,Curious George,M795,162,65,123,0,Brown,2,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,79,Yes,No,1,Rezvan,M798,155,74,119,0,Brown,16,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,85,No,Yes,1,Thor,M961,193,76,145,0,NA,10,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,78,Yes,No,1,Don,M801,185,76,152,0,Brown,8,NA,0,NA,good,NA,NA,4
+Adam Kaeser,2022,78,Yes,No,1,Nola,M802,176,73,130,0,Brown,12,east,0,0,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,77,No,No,1,Viddy,M803,171,75,133,0,Unknown,4,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,81,Yes,No,1,Arthur,M804,174,75,132,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,81,Yes,No,1,Maximus,M805,211,82,162,0,Brown,18,NA,0,NA,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,86,No,No,1,Watson Underpalm,M807,171,70,130,0,Red,2,stationary,0,1,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,77,No,No,1,Smurfette,M808,134,NA,113,0,NA,4,east,0,0,good,organic_cover,brushy_cover,4
+Adam Kaeser,2022,84,Yes,No,1,Marcy Playground,M809,172,69,137,0,Brown,13,north,0,0,good,organic_cover,open_green_area,4
+Adam Kaeser,2022,74,No,Yes,1,Conner,M810,169,NA,128,0,NA,9,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,84,No,No,1,Uncle Herman,M811,183,75,137,0,Brown,3,stationary,0,1,good,organic_cover,brushy_cover,4
+Adam Kaeser,2022,76,Yes,No,1,Lannie Parkmann,M812,178,NA,146,0,NA,3,stationary,0,1,good,organic_cover,open_green_area,4
+Adam Kaeser,2022,79,Yes,No,1,Sherman,M814,168,69,123,0,Unknown,4,unknown,1,0,good,NA,on_road_or_side_walk,4
+Adam Kaeser,2022,69,No,No,1,Molasses,M815,174,70,130,0,Unknown,3,stationary,0,1,good,organic_cover,open_green_area,4
+Adam Kaeser,2022,76,No,No,1,Alvin,M817,182.5,72,143,0,Brown,2,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Adam Kaeser,2022,76,No,No,1,Theodore,M819,137,61,106,0,Unknown,2,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,4
+Patrice Couch,2021,79,No,No,1,Friday,M700,80,36,67,0,Brown,8,south,0,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Lisa Keppner,2005,NA,NA,No,1,Momma T,M363,154,79,NA,0,NA,2,stationary,0,1,NA,organic_cover,brushy_cover,-13
+Adam Kaeser,2022,68,Yes,No,1,Rocky Bonita,M820,170,NA,141,0,Unknown,3,east,0,0,good,exposed_organic,open_green_area,4
+Danielle Bumgardner,2022,NA,NA,no,1,Dar,E291,144,66,104,1,brown,2,NA,NA,NA,NA,NA,NA,4
+Danielle Bumgardner,2022,NA,No,no,1,Yaupon,M574,108,51,78,0,Brown,2,NA,0,NA,NA,water,waterbody,4
+Adam Kaeser,2022,70,No,No,1,Augie,M823,167,69,135,0,Red,5,unknown,0,0,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,66,No,No,1,Leo,M822,152,64,116,0,Unknown,6,stationary,0,1,good,exposed_organic,open_green_area,4
+Lisa Keppner,2017,NA,Not sure,No,1,Sprinkles,M376,177,82,NA,0,Brown,8,unknown,0,0,other,organic_cover,open_green_area,-1
+Lisa Keppner,2017,NA,NA,Yes,1,Dusky,M378,146,NA,NA,1,NA,5,stationary,0,1,NA,other,other,-1
+Lisa Keppner,2017,NA,NA,Yes,1,Dusky,M378,150,NA,NA,1,NA,5,NA,0,NA,NA,organic_cover,brushy_cover,-1
+Lisa Keppner,2013,NA,NA,No,1,Macho,M093,180,NA,NA,0,NA,2,NA,0,NA,NA,other,other,-5
+Lisa Keppner,2012,NA,Not sure,No,1,Ramfos,M372,166,79,NA,0,NA,5,stationary,0,1,other,organic_cover,brushy_cover,-6
+Lisa Keppner,2012,NA,NA,Yes,1,Ramfos,M372,166,78,NA,0,NA,5,stationary,0,1,NA,exposed_organic,open_green_area,-6
+Adam Kaeser,2022,73,Yes,No,1,Ghost Face,M825,183,NA,147,0,Unknown,2,stationary,0,1,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,74,Yes,No,1,Evil Knievel,M970,182,76,134,0,Unknown,6,stationary,0,1,good,exposed_organic,open_green_area,4
+Adam Kaeser,2022,67,Yes,No,1,NA,M829,195,76,148,0,Brown,3,stationary,0,1,bad,exposed_organic,open_green_area,4
+Lisa Keppner,1998,NA,Not sure,No,1,Skeletor,M391,160,NA,NA,0,Brown,5,unknown,0,0,other,organic_cover,open_green_area,-20
+Lisa Keppner,1999,NA,Not sure,Yes,1,Skeletor,M391,163,NA,NA,0,Brown,5,unknown,0,0,other,organic_cover,open_green_area,-19
+Lisa Keppner,1998,NA,Not sure,No,1,Lisa's #30,No Tag,121,NA,NA,0,Unknown,6,unknown,0,0,other,NA,open_green_area,-20
+Lisa Keppner,2023,71,Yes,No,1,Sprinkles,M376,176,83,143,0,Brown,8,stationary,0,1,good,organic_cover,brushy_cover,5
+Lisa Keppner,2023,71,Yes,Yes,1,Ling Kong Louie,M374,165,72,132,0,Brown,3,stationary,0,1,good,organic_cover,open_green_area,5
+Lisa Keppner,2021,80,No,Yes,1,Phoenix,M091,185,73,133,0,Other,4,unknown,0,0,good,other,other,3
+Patrice Couch,2021,82,No,No,1,Patty Cake,M615,96,42,73,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,80,No,Yes,1,Patty Cake,M615,96,42,73,0,Brown,2,east,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,79,Yes,No,1,Leo,M616,171,70,136,0,Brown,10,stationary,0,1,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,81,Yes,Yes,1,Casper,M618,180,79,137,0,Red,5,west,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,75,Yes,Yes,1,Casper,M618,180,79,137,0,Red,5,east,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,82,Yes,No,1,Matilda,M619,160,81,124,0,Brown,2,south,0,0,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,66,No,No,1,Lovey,M622,104,51,77,0,Brown,2,stationary,0,1,good,organic_cover,brushy_cover,3
+"Patrice Couch, Lisa Keppner",2021,63,No,No,1,Wyatt,M693,169,74,121,0,Brown,2,stationary,0,1,good,organic_cover,brushy_cover,3
+"Patrice Couch, Lisa Keppner",2021,63,No,No,1,Ella,M625,154,76,123,0,Brown,3,stationary,0,1,good,organic_cover,brushy_cover,3
+"Patrice Couch, Lisa Keppner",2021,63,No,No,1,Baker,M689,200,83,145,0,Brown,2,stationary,0,1,good,organic_cover,brushy_cover,3
+"Patrice Couch, Lisa Keppner",2021,63,No,No,1,Deere,M627,130,66,102,0,Brown,2,stationary,0,1,good,organic_cover,brushy_cover,3
+Patrice Couch,2021,64,No,No,1,Justin Time,M692,86,49,73,0,Brown,8,stationary,0,1,good,organic_cover,open_green_area,3
+Patrice Couch,2021,72,No,Yes,1,Sally,M408,148,72,116,0,Brown,27,stationary,0,1,good,organic_cover,open_green_area,3
+Patrice Couch,2021,72,No,Yes,1,Judson,M708,133,63,101,0,Brown,22,stationary,0,1,good,organic_cover,open_green_area,3
+Patrice Couch,2021,73,No,No,1,Dixie,M681,100,45,77,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,73,No,No,1,KD,E143,153,80,127,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,3
+Patrice Couch,2021,64,Yes,No,1,Dinosaur,M690,156,72,118,0,Brown,2,stationary,0,1,good,asphalt_or_concrete,open_green_area,3
+Patrice Couch,2022,75,No,Yes,1,Baker,M689,200,84,146,0,Brown,2,stationary,0,1,good,organic_cover,other,4
+Patrice Couch,2022,73,No,Yes,1,Dixie,M681,99,46,76,0,Brown,3,stationary,0,1,good,organic_cover,other,4
+Patrice Couch,2022,66,No,Yes,1,Lupin,M451,188,74,136,0,Brown,7,north,0,0,good,organic_cover,open_green_area,4
+Patrice Couch,2022,82,Yes,Yes,1,Sigi,M683,162,75,118,0,Brown,2,south,0,0,good,exposed_organic,open_green_area,4
+Patrice Couch,2022,71,Yes,Yes,1,Sigi,M683,162,75,118,0,Brown,2,south,0,0,good,exposed_organic,open_green_area,4
+Patrice Couch,2022,75,Yes,Yes,1,Leo,M616,173,70,137,0,Brown,10,stationary,0,1,good,asphalt_or_concrete,other,4
+Patrice Couch,2022,81,Yes,Yes,1,Judith,M684,162,71,123,0,Brown,13,south,0,0,good,exposed_organic,open_green_area,4
+Patrice Couch,2022,90,Yes,Yes,1,Sally,M408,147,70,116,0,Brown,27,stationary,0,1,good,asphalt_or_concrete,other,4
+Patrice Couch,2022,81,No,Yes,1,Justin Time,M692,100,47,87,0,Brown,8,north,0,0,good,exposed_organic,open_green_area,4
+Patrice Couch,2022,75,No,Yes,1,Patty,M686,166,73,124,0,Brown,19,stationary,0,1,good,organic_cover,brushy_cover,4
+Patrice Couch,2022,75,No,No,1,Vendredi,M687,97,44,77,0,Brown,2,stationary,0,1,good,exposed_organic,waterbody,4
+Adam Kaeser,2023,69,No,No,1,Van Vac,M870,206,NA,157,0,Unknown,4,north,0,0,good,exposed_organic,open_green_area,5
+Patrice Couch,2022,74,Yes,Yes,1,Durwood,M691,172,69,130,0,Brown,32,north,0,0,good,exposed_organic,open_green_area,4
+Patrice Couch,2022,69,Yes,Yes,1,Justin Time,M692,100,51,88,0,Brown,8,stationary,0,1,good,organic_cover,brushy_cover,4
+Patrice Couch,2023,72,Yes,No,1,Wyatt,M693,168,72,121,0,Brown,2,south,0,0,good,water,open_green_area,5
+Patrice Couch,2023,73,Yes,Yes,1,Patty,M686,166,73,124,0,Brown,19,stationary,0,1,bad,organic_cover,brushy_cover,5
+Adam Kaeser,2023,70,No,Yes,1,Roscoe,M871,188,40,134,0,NA,12,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Lisa Keppner,2023,67,No,No,1,Geejaw,M377,157,69,124,0,Brown,2,stationary,0,1,good,exposed_organic,brushy_cover,5
+Debi Reese,2023,72,No,No,1,Halimah,E063,230,84,149,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,5
+Debi Reese,2023,71,No,Yes,1,Braveheart,E060,230,98,158,NA,Other,2,west,0,0,good,asphalt_or_concrete,open_green_area,5
+Debi Reese,2023,72,No,No,1,Shyanne,E062,143,74,109,0,Unknown,4,stationary,0,1,good,exposed_organic,open_green_area,5
+Debi Reese,2023,71,No,Yes,1,Daniel,E059,180,80,140,0,Brown,7,east,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,75,No,Yes,1,Holyoke,M912,169,73,137,0,Brown,2,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adsit,2023,82,No,Yes,1,Blue,M911,185,73,143,0,Unknown,2,east,1,0,good,exposed_organic,open_green_area,5
+Debi Reese,2023,72,No,Yes,1,Socrates,E064,200,82,143,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,5
+Patrice Couch,2023,73,No,Unknown,1,Ichabod,M695,165,79,132,0,Brown,5,south,0,0,good,exposed_organic,open_green_area,5
+Patrice Couch,2023,75,No,Unknown,1,Hermione,M696,158,81,122,0,Brown,5,unknown,0,0,good,asphalt_or_concrete,open_green_area,5
+Phillip Adsit,2023,77,No,No,1,Hermes,M913,179,75,129,0,Unknown,3,stationary,0,1,good,exposed_organic,brushy_cover,5
+Debi Reese,2023,71,No,No,1,Belle,M754,148,84,110,0,Brown,4,north,0,0,good,exposed_organic,open_green_area,5
+Debi Reese,2023,71,No,No,1,Aurora,M755,136,73,106,0,Yellow,3,north,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phil Adsit,2023,50,No,Yes,1,Lee Boy,M914,166,NA,137,0,NA,2,other,0,0,good,exposed_organic,open_green_area,5
+Debi Reese,2023,71,No,Yes,1,Heidi,M756,196,81,150,0,Other,6,west,0,0,good,exposed_organic,open_green_area,5
+Debi Reese,2023,74,No,Yes,1,Lauren,M759,149,83,128,0,Brown,4,north,0,0,good,exposed_organic,open_green_area,5
+Debi Reese,2023,67,No,No,1,Angela,E150,164,84,122,0,Brown,2,north,1,0,good,exposed_organic,open_green_area,5
+Debi Reese,2023,72,No,Yes,1,Annie Oakley,E151,170,94,130,0,Brown,4,east,1,0,good,exposed_organic,open_green_area,5
+Lydia,2023,67,No,No,1,Mellow Fellow,M042,175,71,124,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,5
+Phil Adsit,2023,77,No,Yes,1,Clem,M916,204,NA,150,0,Brown,5,east,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,72,No,No,1,Heather,M915,165,NA,122,0,Brown,2,stationary,NA,1,good,exposed_organic,open_green_area,5
+Debi Reese,2023,72,No,No,1,Chelone,E280,171,78,133,0,Brown,2,west,0,0,good,organic_cover,brushy_cover,5
+Patrice Couch,2023,76,No,Unknown,1,Waylyn,M698,156,78,118,0,Brown,2,stationary,0,1,good,asphalt_or_concrete,open_green_area,5
+Patrice Couch,2023,73,No,No,1,Azog,M699,190,70,124,0,Brown,2,west,0,0,bad,exposed_organic,open_green_area,5
+Phillip Adsit,2023,80,No,Yes,1,Big Daddy,E134,207,86,153,0,NA,2,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adsit,2023,79,No,Yes,1,Hermes,M913,170,78,131,0,Brown,3,east,0,0,good,organic_cover,brushy_cover,5
+Adam Kaeser,2023,71,No,No,1,Cecilia,M875,157,68,116,0,Brown,2,NA,0,NA,good,NA,on_road_or_side_walk,5
+Adam Kaeser,2023,73,No,No,1,Hubcap,M876,185,78,141,0,Unknown,3,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,5
+Rhonda Roddam-Duke,2023,65,No,No,1,Deniz,E089,15,6.5,10,0,Brown,3,north,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,73,Yes,Yes,1,Apollo,E136,201,87,149,0,Brown,3,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adsit,2023,68,No,No,1,Atlas,E137,170,75,126,0,Brown,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2020,81,Yes,No,1,Persephone,M662,171,81,132,0,Brown,6,north,0,0,good,exposed_organic,open_green_area,2
+Adam Kaeser,2023,NA,No,No,1,Derby Girl,M879,181,75,135,0,NA,2,NA,0,NA,NA,NA,NA,5
+Adam Kaeser,2023,71,No,Yes,1,Dos,M920,167,75,127,0,NA,22,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adsit,2023,75,Yes,No,0,Not Named,No Tag,138,63,101,0,Unknown,6,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,68,No,Unknown,1,NA,M921,152,70,127,0,Unknown,13,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,68,No,Unknown,1,NA,M922,175,81,134,0,Unknown,8,stationary,0,1,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,68,No,No,1,Adam’s Park Pup,M923,150,71,116,0,Other,3,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,69,No,Yes,1,Shot-putt Shelly,M951,140,76,118,0,Unknown,7,unknown,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,72,Yes,Yes,1,Crawl Space,M925,143,64,108,0,Brown,2,east,0,0,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,78,No,Unknown,1,Miss Wibberley,M926,159,77,127,0,Brown,4,NA,0,NA,NA,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,69,No,No,1,Chicken Little,M928,101,81,46,0,Unknown,4,stationary,0,1,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,69,No,Yes,1,NA,M670,121,51,89,NA,NA,14,stationary,0,1,good,organic_cover,brushy_cover,5
+Lisa Keppner,2023,76,Yes,No,1,Noah,M752,197,83,147,0,Other,2,unknown,0,0,good,organic_cover,brushy_cover,5
+Lisa Keppner,2023,84,Not sure,Yes,1,Noah,M752,197,83,147,0,Other,2,stationary,NA,1,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,81,Yes,Yes,1,NA,M601,164,72,131,0,NA,5,stationary,NA,1,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,70,Yes,No,1,Judy,E115,155,83,143,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,75,No,No,1,Clyde,E119,196,92,172,0,Brown,13,stationary,0,1,good,asphalt_or_concrete,on_road_or_side_walk,5
+Jeff Patton,2023,70,No,Yes,1,Molar,E114,152,76,141,NA,NA,4,stationary,0,1,good,organic_cover,brushy_cover,5
+Phillip Adsit,2023,75,No,No,0,Not Named,No Tag,182,75,140,0,NA,6,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adsit,2023,71,No,No,1,Tobe,E139,172,81,128,0,Brown,5,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adit,2023,NA,No,Yes,1,Tobe,E139,172,81,128,0,Brown,5,unknown,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,79,No,No,1,Agnes,E140,161,80,120,0,Brown,4,west,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,77,No,No,1,Isabelle,E144,185,86,141,0,NA,3,NA,1,NA,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adsit,2023,82,No,Yes,1,Lauren,M759,137,17,106,0,NA,4,west,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,83,Yes,No,1,Feather,E145,186,83,144,0,Other,5,east,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,69,No,Yes,1,Belle,M754,146,78,116,0,Unknown,4,south,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,72,No,No,1,Livia,E180,171,81,116,0,Brown,4,south,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,76,Yes,No,1,Augustus,E113,199.6,81,151.8,0,Other,2,stationary,0,1,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,88,No,Yes,1,Chicken Little,M928,104,50,85,0,Unknown,4,stationary,0,1,good,exposed_organic,open_green_area,5
+Patrice Couch,2023,69,Yes,Yes,1,Friday,M700,102,46,81,0,Brown,8,west,0,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Molly Allen,2023,75,Yes,No,1,Alex,E026,163.1,83.8,132.9,0,Brown,2,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,NA,Yes,Yes,1,Bling Bling,M929,148,113,69,0,NA,8,north,1,0,NA,asphalt_or_concrete,on_road_or_side_walk,5
+Linda Yori,2021,81,Not sure,No,1,Tulip,M390,138.33,73.66,108.14,0,Brown,2,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,3
+Linda Yori,2021,78,No,Unknown,1,Skeletor II,M391,163.39,72.54,128.63,0,Brown,5,west,0,0,bad,exposed_organic,open_green_area,3
+Linda Yori,2021,79,No,Yes,1,Macho,M788,176.58,76.81,138.54,0,Orange,2,stationary,0,1,good,exposed_organic,open_green_area,3
+Linda Yori,2022,92,Yes,Yes,1,Macho,M788,185.81,79.7,135.24,0,Brown,2,north,0,0,good,organic_cover,open_green_area,4
+Linda Yori,2023,68,No,Yes,1,Avery,M785,146.18,72.22,118.74,0,Brown,2,stationary,0,1,good,organic_cover,open_green_area,5
+Patrice Couch,2023,75,No,No,1,Pine,M701,161,77,125,0,Brown,2,stationary,0,1,good,organic_cover,open_green_area,5
+Jeff Patton,2023,70,Yes,Yes,1,CP Bailey,E111,155,83,143,0,Brown,3,west,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,82,Yes,No,1,Catarina,E126,173,76,126,0,NA,2,north,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,85,No,Yes,1,Dar,E291,146,68,105,0,NA,2,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,83,No,Yes,1,Figgie,E292,144,74,103,0,NA,2,east,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,87,No,Yes,1,Marthe,E293,164,81,129,0,Unknown,2,south,1,0,good,asphalt_or_concrete,open_green_area,5
+Jeff Patton,2023,78,Yes,No,1,Caligula,E182,198,89,151,0,Unknown,3,stationary,0,1,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,79,No,Yes,1,Timothy Tuttle,E185,191,97,145,0,Brown,5,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,90,No,No,1,Joleta,E285,182,69,127,0,NA,2,north,1,0,good,asphalt_or_concrete,brushy_cover,5
+Phillip Adsit,2023,88,No,No,1,Felix,E286,161,75,126,0,Unknown,3,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,83,Yes,No,1,Gideon,E287,163,63,117,0,Unknown,2,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,80,No,Yes,1,Judith,M684,161,72,122,0,NA,13,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,80,No,Yes,1,Dixie,M681,137,61,101,0,NA,3,west,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,81,Yes,Yes,1,Belle,M754,148,76,129,0,NA,4,south,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,79,No,Yes,1,Timothy Tuttle,E185,181,86,151,0,Brown,5,north,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,85,No,Yes,1,Chelone,E280,175,75,130,0,NA,2,west,1,0,good,asphalt_or_concrete,brushy_cover,5
+Phillip Adsit,2023,86,No,No,1,Tommaso,E281,162,78,131,0,NA,2,east,0,0,good,exposed_organic,waterbody,5
+Phillip Adsit,2023,81,Yes,No,1,Jerrott,E282,124,58,98,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,82,No,Yes,1,Clem,M916,197,77,143,0,NA,5,west,1,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,84,No,No,1,Jordan,E283,189,80,143,0,NA,2,north,1,0,good,exposed_organic,brushy_cover,5
+Phillip Adsit,2023,86,No,No,1,Loppe,E284,162,68,117,0,Unknown,6,north,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,82,No,Yes,1,Anselm,E263,161,65,116,0,NA,2,west,0,0,good,exposed_organic,waterbody,5
+Phillip Adsit,2023,82,No,No,1,Ludovico,E264,162,73,127,0,NA,2,east,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,80,No,No,1,Titus II,E188,210,81.5,143,0,NA,4,stationary,0,1,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,85,Yes,No,1,Quadrapet,M931,118,52,91,0,NA,3,stationary,0,1,good,organic_cover,open_green_area,5
+Jeff Patton,2023,77,No,Yes,1,Angel,E200,141,63,107,0,Brown,5,NA,NA,NA,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,77,No,No,1,Balbinus,E253,182,80,130.5,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,75,Yes,No,1,Elagabalus,E242,144,80,111,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,79,Yes,No,1,Galba,E206,172,81,136,0,Brown,2,west,0,0,good,organic_cover,brushy_cover,5
+Jeff Patton,2023,75,Yes,No,1,Geta,E243,176,82,130,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,79,Yes,No,1,Hadrian,E207,173,80,126,0,NA,5,stationary,0,1,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,82,No,No,1,Macrinus,E234,191,87,141,0,Brown,2,west,0,0,good,organic_cover,brushy_cover,5
+Jeff Patton,2023,74,Yes,No,1,Messali,E160,154,84,119,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,75,No,No,1,Pertinax,E240,139,76,106,0,NA,2,stationary,1,1,good,asphalt_or_concrete,on_road_or_side_walk,5
+Phillip Adsit,2023,71,Yes,Yes,1,Freddy The Wonder Turtle,E146,141,71,112,0,Brown,3,south,1,0,bad,asphalt_or_concrete,open_green_area,5
+Phillip Adsit,2023,72,Yes,No,1,Radcliff,E147,191,82,150,0,Brown,2,west,1,0,bad,exposed_organic,open_green_area,5
+Phillip Adsit,2023,78,Yes,No,1,Judson II,E170,190,79,150,0,NA,3,west,1,0,good,asphalt_or_concrete,open_green_area,5
+Phillip Adsit,2023,83,Yes,No,1,Trinity,E171,158,75,121,0,NA,2,stationary,1,1,good,asphalt_or_concrete,open_green_area,5
+Phillip Adsit,2023,80,No,Yes,1,Clyde,E119,183,81,139,0,NA,13,stationary,0,1,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,80,No,No,1,Emory,E175,213,81,156,0,Brown,3,north,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,82,No,Yes,1,Halima,E063,199,80,141,0,NA,2,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,82,No,No,1,Tobias,E174,148,66,110,0,NA,2,north,1,0,good,asphalt_or_concrete,open_green_area,5
+Phillip Adsit,2023,81,No,Yes,1,Pine,M701,163,77,126,0,Brown,2,south,1,0,good,asphalt_or_concrete,brushy_cover,5
+Phillip Adsit,2023,84,No,No,1,Spitfire,E176,145,66,110,0,Brown,2,west,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,83,Yes,No,1,Harvie,E177,182,88,144,0,NA,2,west,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,82,Yes,No,1,Emerson II,E178,171,78,138,0,Brown,3,stationary,0,1,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,82,Yes,No,1,Nicholai,E179,150,64,112,0,NA,2,east,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,73,Yes,Yes,1,Heather,M915,158,75,114,0,Brown,2,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,76,Yes,No,1,Caterino,E192,158,68,114,0,Brown,4,stationary,0,1,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,77,Yes,No,1,Layla,E193,152,78,121,0,NA,2,north,1,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,78,Yes,Yes,1,Angela,E150,163,78,125,0,NA,2,north,1,0,good,water,open_green_area,5
+Phillip Adsit,2023,88,No,Yes,1,Lee Boy,M914,158,72,133,0,Brown,2,north,1,0,good,asphalt_or_concrete,brushy_cover,5
+Phillip Adsit,2023,86,No,Yes,1,Mikal,E266,189,75,145,0,Orange,3,south,0,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,89,No,No,1,Lymond,E267,189,77,141,0,NA,2,stationary,0,1,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,78,No,No,1,Skipper,M935,147,66,118,0,Brown,2,north,0,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,77,No,Yes,1,Tag loss,M934,190,77,146,0,NA,6,stationary,0,1,good,organic_cover,open_green_area,5
+Jeff Patton,2023,72,Yes,No,1,Trajan,E205,141,74,116,0,Other,2,north,0,0,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,75,Yes,No,1,Plotina,E198,71,32,55,0,Brown,2,stationary,0,1,good,exposed_organic,open_green_area,5
+Jeff Patton,2023,77,Yes,No,1,Septimius Severus,E238,200,90,145,0,NA,3,north,0,0,good,exposed_organic,open_green_area,5
+Linda Yori,2023,88,Yes,Yes,1,Ditzy II,M780,182.91,97.55,147.54,0,Brown,3,west,0,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,NA,NA,Unknown,1,Tag loss,M933,175,68,122,0,NA,22,NA,0,NA,NA,NA,NA,5
+Patrice Couch,2023,82,Yes,Yes,1,Judson,M708,174,76,127,0,Brown,22,stationary,0,1,good,organic_cover,open_green_area,5
+Phillip Adsit,2023,90,No,Yes,1,Ahoshta,E272,186,80,138,0,Red,3,south,1,0,good,exposed_organic,open_green_area,5
+Phillip Adsit,2023,84,No,Yes,1,Harvard Lee,E273,171,71,125,0,Unknown,12,east,0,0,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,87,No,No,1,Pappa Gator,M940,170,71,137,0,Brown,2,NA,0,NA,good,NA,NA,5
+Adam Kaeser,2023,NA,No,No,1,NA,M938,198,76,147,0,NA,8,east,NA,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2023,NA,No,Yes,1,Jackson,M939,204,81,150,0,NA,38,east,0,0,good,exposed_organic,open_green_area,5
+Lydia Ambrose,2023,70,Yes,Unknown,1,Cecilia,M045,164,76,127,0,Brown,2,east,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Jeff Patton,2023,73,No,Yes,1,KD,E143,179,92,117,0,Brown,3,west,0,0,good,exposed_organic,open_green_area,5
+Adam Kaeser,2023,72,No,Yes,1,NA,M944,165,71,129,0,Red,7,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Danielle Bumgardner,2023,NA,No,No,1,NA,M577,182,77,131,0,NA,2,NA,0,NA,good,organic_cover,brushy_cover,5
+Adam Kaeser,2023,66,No,No,1,Tadpole,M9,65,29,55,0,Unknown,2,east,0,0,good,organic_cover,open_green_area,5
+Adam Kaeser,2023,49,No,Yes,1,Shot putt Shelly,M951,140,79,119,0,Brown,7,unknown,0,0,good,asphalt_or_concrete,on_road_or_side_walk,5
+Adam Kaeser,2024,72,No,No,1,Spring Peeper,M953,167,NA,125,0,NA,3,south,1,0,good,asphalt_or_concrete,on_road_or_side_walk,6
+Adam Kaeser,2024,72,No,No,1,Jiblet,M954,109,NA,91,0,NA,4,south,1,0,good,exposed_organic,on_road_or_side_walk,6
+Lydia Ambrose,2024,68,Yes,No,1,Limpy Miles Gibney,M049,170,75,124,0,Brown,2,stationary,0,1,good,asphalt_or_concrete,waterbody,6
+Adam Kaeser,2024,69,No,No,1,Shadow Merchant,M955,191,77,138,0,Unknown,2,unknown,1,0,good,asphalt_or_concrete,on_road_or_side_walk,6
+Lydia Ambrose,2024,68,No,No,1,Leslie Knope,M050,176,81,130,1,Brown,3,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,6
+Adam Kaeser,2024,NA,No,No,1,Paulette,M957,64,28,53,0,NA,2,stationary,0,1,good,exposed_organic,open_green_area,6
+Adam Kaeser,2024,77,No,No,1,NA,M958,177,74,142,0,Unknown,2,stationary,0,1,good,water,waterbody,6
+Adam Kaeser,2024,77,No,Yes,1,Santa’s Little Helper,M670,133,58,100,0,NA,14,stationary,0,1,good,exposed_organic,open_green_area,6
+Adam Kaeser,2024,74,No,Yes,1,NA,M325,184,71,136,0,NA,7,east,0,0,good,organic_cover,open_green_area,6
+Lisa Keppner,2024,83,No,Yes,1,Marty,M373,199,80,143,0,Brown,4,west,0,0,good,exposed_organic,brushy_cover,6
+Adam Kaeser,2024,84,No,Yes,1,Thor,M961,189,79,145,0,NA,10,unknown,0,0,good,exposed_organic,open_green_area,6
+Adam Kaeser,2024,84,Yes,Yes,1,Persephone,M963,189,79,145,0,Unknown,4,west,1,0,good,asphalt_or_concrete,on_road_or_side_walk,6
+Adam Kaeser,2024,NA,NA,Yes,1,NA,M670,145,62.5,109,NA,NA,14,NA,NA,NA,NA,NA,NA,6
+Adam Kaeser,2024,82,Yes,No,1,Pauline’s Pup,M9,88,43,71,0,Brown,2,stationary,0,1,good,organic_cover,brushy_cover,6
+Adam Kaeser,2024,82,No,Yes,1,NA,M809,173,73,137,0,NA,13,stationary,0,1,good,organic_cover,open_green_area,6
+Adam Kaeser,2024,82,No,Yes,1,NA,M325,185,71,136,0,NA,7,stationary,0,1,good,organic_cover,open_green_area,6
+Patrice Couch,2024,73,No,Yes,1,Justin Time,M692,124,64,107,0,Brown,8,east,0,0,good,exposed_organic,open_green_area,6
+Adam Kaeser,2024,80,No,No,1,Jack Skelly,M967,184,75,138,0,NA,2,unknown,1,0,good,exposed_organic,on_road_or_side_walk,6
+Adam Kaeser,2024,76,Yes,Yes,1,Evil Kneivel,M970,179,77,131,0,NA,6,west,0,0,bad,organic_cover,brushy_cover,6
+Adam Kaeser,2024,84,No,No,1,Skeleton,M971,185,75,142,0,NA,2,west,0,0,good,exposed_organic,open_green_area,6
+Adam Kaeser,2024,NA,No,Yes,1,NA,M957,78,34,63,0,NA,2,north,0,0,good,asphalt_or_concrete,open_green_area,6
