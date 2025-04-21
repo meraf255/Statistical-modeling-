@@ -1,0 +1,353 @@
+---
+title: "Air Quality Index" 
+author: 
+runtime: shiny
+output:
+  flexdashboard::flex_dashboard:
+    theme: journal
+    vertical_layout: scroll
+---
+
+```{r, include = FALSE}
+library(tidyverse)
+library(dplyr)
+library(pacman)
+library(shiny)
+library(dygraphs)
+library(knitr)
+library(flexdashboard)
+library(plotly)
+library(scales)
+library(ggmap)
+library(viridis) # for color schemes
+library(maps)
+library(lubridate)
+library(readr)
+library(tidyr)
+library(ggthemes)
+library(purrr)
+library(htmltools)
+library(htmlwidgets)
+library(metricsgraphics)
+library(RColorBrewer)
+library(leaflet)
+library(maptools)
+library(jsonlite)
+library('unikn') # we had to download this package - used for icons on conclusion page
+full<- read_csv("full.csv")
+options(scipen=99)
+```
+
+Home
+==========================
+
+Column 
+-------------------------
+### About 
+#### Authors
+
+Meraf and Wonu
+ 
+
+#### Background Information
+
+We wanted to look at the effects of Air quality, pollution death rate and population on literacy rate for our final project in MSCS 264. This website allows users to interact with variables mentioned above from the years 2010 to 2017 and see how these variables affect one another. Our research question:
+
+- How does air quality influence death rate from the years 2010-2017?
+
+- What is the relationship between population and air quality?
+
+- How does air pollution, air quality and population effect differ in certain regions from others considering variables like literacy to see country developmental status?
+
+
+<br>
+
+Column {data-width = 200}
+-------------------------
+#### Data Sources
+
+We extracted publicly available world data from multiple sources like WHO, Kaggle etc, to investigate and visualize in the following tabs. Within each data set contained multiple variables but we wanted to specifically filter, join and : Country,Region,Year,Population,Index levels, Source of Air quality Index (PM10, PM2.5, NO2), Pollution Death rates per 100,000 (from Air pollution, Indoor, Ozone, Particulate), literacy rate, Longitude and Latitude for our map.
+
+
+- [AQI Data](https://whoairquality.shinyapps.io/AmbientAirQualityDatabase/)
+- [Death Rate Data](https://www.kaggle.com/datasets/akshat0giri/death-due-to-air-pollution-19902017)
+- [Population Data](https://data.worldbank.org/indicator/SP.POP.TOTL?most_recent_year_desc=false)
+- [Longitude and Latitude Data](https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf)
+- [Predicting Literacy Data](https://www.kaggle.com/code/stieranka/predicting-gdp-world-countries/data)
+
+```{r}
+renderImage({
+  # Return a list
+  list(src = "pollution.jpg", width = 600, height = 425)
+})
+```
+
+AQI trend {data-navmenu="Trends"}
+=========================
+
+Column 
+-------------------------
+
+### AQI trend
+
+
+```{r echo = FALSE}
+full2<- full %>%
+  mutate(level_of_concern = ifelse(Index <= 50, "#5f862f", 
+                        ifelse(Index <= 100, "#86702f", 
+                               ifelse(Index <= 150, "#e40d1b",
+                                      ifelse(Index <= 200, "#2e1f20",
+                                             ifelse(Index <= 300, "#ebecf1", "Hazardus"))))))
+
+leaflet() %>%  
+  addTiles() %>% 
+  setView(0,0,2)%>%
+  clearBounds()%>%
+#instead of fit bound we used clear bounds so that we can get a clear view of the world map. because we are looking at multiple countries around the world.
+  addCircleMarkers(full2$longitude, 
+                   full2$latitude, 
+                   color = full2$Index, 
+                   radius = 6, 
+                   fill = T,
+                   fillOpacity = 0.2,
+                   opacity = 0.6,
+                   popup = paste(full2$Entity,
+                                 full2$Index, 
+                                 full2$Sources,
+                                 sep = ", ")) %>%
+  addLegend("bottomleft", 
+            colors = c("orange","green", "red", "black"),
+            labels = c("Good",
+                       "unhealthy for senesetive groups.",
+                       "Unhealthy.",
+                       "Very unhealthy."), 
+            opacity = 0.8)
+ 
+
+```
+
+  
+
+Death Rate Trends {data-navmenu="Trends"}
+==========================
+
+Column 
+-------------------------
+
+```{r}
+bypollutiontype <- 
+  full %>%
+  pivot_wider(names_from = Type_pollution, values_from = Death_rate)%>%
+  filter(!is.na(Region))%>%
+  group_by(Air_poll)%>%
+      ggplot(mapping = aes(x = Year, y = Air_poll, color = Region)) +
+        geom_point() +
+        labs(title = "Air pollution death Rates by Year") +
+        ylab("Rate") + 
+        xlab("Year")
+
+ggplotly(bypollutiontype)
+```
+
+Row {.tabset}
+-----------------------------------------------------------------------
+
+### Indoor air pollution death rates
+
+```{r}
+bypollutiontype <- 
+  full %>%
+  pivot_wider(names_from = Type_pollution, values_from = Death_rate)%>%
+  filter(!is.na(Region))%>%
+  group_by(Indoor_airpoll)%>%
+      ggplot(mapping = aes(x = Year, y = Indoor_airpoll, color = Region)) +
+        geom_point() +
+        labs(title = "Indoor air pollution death Rates by Year") +
+        ylab("Rate") + 
+        xlab("Year")
+
+ggplotly(bypollutiontype)
+("Very self explanatory where we could see the highest death rate by region")
+
+
+```
+
+### Outdoor Particulate pollution death rates 
+```{r}
+bypollutiontype <- 
+  full %>%
+  pivot_wider(names_from = Type_pollution, values_from = Death_rate)%>%
+  filter(!is.na(Region))%>%
+  group_by(Outdoor_particulate)%>%
+      ggplot(mapping = aes(x = Year, y = Outdoor_particulate, color = Region)) +
+        geom_point() +
+        labs(title = "Particulate pollution death Rates by Year") +
+        ylab("Rate") + 
+        xlab("Year")
+
+ggplotly(bypollutiontype)
+
+```
+
+
+### Outdoor Ozone pollution death rates
+
+```{r}
+bypollutiontype <- 
+  full %>%
+  pivot_wider(names_from = Type_pollution, values_from = Death_rate)%>%
+  filter(!is.na(Region))%>%
+  group_by(Outdoor_ozone)%>%
+      ggplot(mapping = aes(x = Year, y = Outdoor_ozone, color = Region)) +
+        geom_point() +
+        labs(title = "Ozone Air pollution death Rates by Year") +
+        ylab("Rate") + 
+        xlab("Year")
+
+ggplotly(bypollutiontype)
+
+
+```
+
+Population Trends {data-navmenu="Trends"}
+==========================
+
+Column 
+-------------------------
+
+### Population Trends
+
+
+```{r}
+t <- full %>%
+  ggplot(mapping = aes(text = Region, text2 = Population)) +
+  geom_col(mapping = aes(y = reorder(Region, Year), x = Population, fill = Population, show.ledgend = FALSE))+
+  coord_flip()+
+  labs(title = 'Population by Region', x = 'Population', y = 'Region') +
+  scale_colour_viridis_d(option = "plasma") +
+  labs(fill = "Population")
+
+
+
+ggplotly(t, tooltip = c("text", "text2"))
+
+
+```
+
+
+Death Rate by AQI  {data-navmenu="Research Questions"}
+==========================
+
+
+```{r}
+library(plotly)
+library(ggplot2)
+
+p <- full %>%
+  filter(!is.na(Region))%>%
+  ggplot(aes(Death_rate, Index))
+p <-  p + geom_point(aes(colour = factor(Year)))+
+  geom_smooth(method = lm)+
+  labs(title = 'Death Rate by AQI', x = 'Death Rate', y = 'Index (AQI value)')
+
+ggplotly(p)
+```
+
+
+
+
+Population by AQI {data-navmenu="Research Questions"}
+==========================
+ 
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### About AQI
+
++ Sources of pollutant that Air quality is measured against : PM2.5 are tiny particles in the air that reduce visibility and cause the air to appear hazy when levels are elevated. PM10 very small particles found in dust and smoke. 
++ The AQI is a way of showing changes in the amount of pollution in the air.
++ Everyone may begin to experience health effects when AQI values are between 151 and 200. Anything higher might trigger a health alert.
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+ 
+```{r} 
+box_ggplot <- full %>%
+  filter(Population < 300000000, !is.na(Region)) %>%
+  mutate(Sources = fct_reorder(Sources, Population)) %>% 
+  ggplot(aes(x = Sources, y = Population, fill = Sources)) +
+  geom_boxplot() +
+  theme_classic() + 
+ # theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  coord_flip()
+
+ggplotly(box_ggplot)
+``` 
+ 
+
+Supplemental Info  {data-navmenu="Research Questions"}
+==========================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+### AQI by literacy rate
+```{r}
+library(plotly)
+library(ggplot2)
+p222<- full%>%
+  filter(!is.na(Index))%>%
+  ggplot(aes(Literacy, Index))
+l <-  p222 + geom_point(aes(colour = factor(Year)))+
+  geom_smooth(method = lm)+
+  labs(title = 'Literacy by AQI', x = 'Literacy', y = 'Index (AQI value)')
+
+ggplotly(l)
+
+```
+
+
+
+Conclusions {data-orientation=rows}
+==========================
+ 
+
+
+Row
+-----------------------------------------------------------------------
+
+### Air quality Index Sources
+
+```{r}
+Sources = 3
+valueBox(Sources, icon = "fa-tag", color = "#d05058")
+```
+
+Row
+-----------------------------------------------------------------------
+### Data significance
+
++ Our data consisted of multiple countries around the world, in addition to this we were looking at years between 2010-2017.There were countries that didn't have data entries. Our summary statistics shows us the amount of NA's in every variable we were looking at. 
+
++ When plotting the Population against AQI sources, we decided to take out outliers like China and India because their population sizes are more than the rest of the world, and so it does not let the spread of the other countries show.
+
++ In order to look at AQI trends across the world, we tried to use "if else" functions to categorize index levels into Good, Moderate and Hazardous. Unfortunately, our code didn't work, each of the points on our graph showed up as the same color. The alternative was to use a chloropleth map to indicate the colors of our AQI from best to worst with green being good and red being bad, but the dataset we chose to merge with ours (world map data, which had a longitude and latitude for each country) was too large and R could not compute it. 
+
++ We chose to settle for this visualization in order to have some representation of air quality across the world. 
+ 
++ But this information can be used to calculate regression to understand how the variables are statistically significant.
+
++ Overall our death rate and population influences the level of Air quality a country has. Our graph shows that literacy rate and Air quality are negatively related. 
+
+
+
+
+Row
+-----------------------------------------------------------------------
+Summary statistics 
+
+```{r}
+summary(full)
+```
+
+
