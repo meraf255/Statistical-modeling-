@@ -1,0 +1,379 @@
+---
+title: "Access to health care services among Medicaid Beneficiaries"
+subtitle: "Wonu Falae and Meraf Haileslassie"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(AER)
+library(corrplot)#install.packages("corrplot")
+library(tidyverse)
+library(ggResidpanel)
+library(GGally)      # a NEW package!
+library(mosaic)      # for favstats()
+library(leaps)       # for best subsets methods
+library(glmnet)      # for lasso and ridge regression
+library(tidyverse) 
+library(gridExtra) 
+library(vip)#for lasso plot
+
+data("Medicaid1986")
+
+Medicaid1986 <- as_tibble(Medicaid1986)
+
+Medicaid_new <- Medicaid1986 %>%
+  mutate(new_ac = ifelse(access >= 0.50, 1, 0),
+         access_cat = ifelse(access >= 0.50, "high access", "low access"),
+         access_int = as.integer(new_ac))
+```
+
+# Abstract
+
+In this research, we aim to explore the factors that influence Medicaid beneficiaries' access to healthcare. The data was sourced from the Applied Econometrics with R package. We utilized simple, multiple linear regression and logistic regression techniques to construct an analysis on the relationship between ethnicity and gender to access to health services.We employed step wise, ridge and Lasso regression to refine the model and identify other significant variables. Through our analysis we provide evidence that age, children, first and second principle health component have some correlation with access to health services. Additionally, we uncovered a possible interaction effect between income and ethnicity as well as length of observation and ethnicity, and number of visits and ethnicity. 
+
+# Background and significance
+
+Medicaid, a program enacted in 1965, is a federal and state initiative that provides healthcare coverage to individuals and families with low incomes. Given that Medicaid beneficiaries are typically economically disadvantaged, and there is a well-established link between poverty and poor health, the program serves as a vital safety net for many Americans without access to healthcare. There exists a complex, fragmented health system in the U.S that makes expenditure and quality of care more costly.
+
+Previous research shows that there are long term challenges with accessing health services that are primarily tied to income and discriminatory treatment. The inter sectional discrimination between gender, race and sexual identity places a big role in the realm of health services (Cole, 2022). The Medicaid triple aim framework is built to enhance the healthcare system. This aim includes improving patient experience of care, improve population health and reduce per capita cost of healthcare. It is therefore difficult to achieve triple aim goals without access to health services.
+
+Studies assessed Medicaid impact on access to and utilization of health care services among racial and ethnic minorities children. For instance (Hall, 1998) found that although the gap still persists, utilization of health care services by minorities has increased since the mid 1960s. By 1986, average physician visits among both poor minorities and white had increased. To explore factors that impact healthcare access, we want to analyze various predictors such as age, gender, ethnicity, marital status, household income, health status, and the number of healthcare visits. Our goal is to better understand the intricate relationship between access to healthcare and various variables mentioned in table 1. As healthcare and ethics are intricately intertwined, we also aim to investigate the ethical implications of our findings. This topic is particularly relevant, given the complexity of the healthcare system in the US and worldwide, and the significant research and development devoted to it. Which prompted us to investigate if there is an association between access to health services and ethnicity and gender.
+
+
+
+**Table 1**:
+\begin{tabular}{|l|l|l|}
+\hline
+Variables  & Definition   \\ \hline
+Visits & Number of doctor visits      \\ \hline
+Exposure  & Length of observation period for ambulatory care (measured in days)  \\ \hline
+Children & Total number of children in the household  \\ \hline
+Age & Age of the respondent \\ \hline
+Income & Annual household income (average of income range in million USD) \\ \hline
+health1& First principal component (divided by 1000) of three health-status variables  \\ \hline
+health2 & Second principal component (divided by 1000) of three health-status variables \\ \hline
+Access               & Availability of health services (0 = low access, 1 = high access) \\ \hline
+Married              & Is the individual married \\ \hline
+Gender              & Indicating gender\\ \hline
+Ethnicity             & Factor indicating ethnicity ("Caucasian" or "other") \\ \hline
+School               & Number of years completed in school \\ \hline
+enroll              & Is the individual enrolled in a demonstration program \\ \hline
+Program              & Factor indicating the managed care demonstration program (aid with dependent child and security income) \\ \hline
+\end{tabular}
+ 
+# Materials and Methods
+
+We used data from a built in package in R called Applied Econometrics with R. Within this package we were able to extract Medicaid Utilization Data. It was a cross section data from a 1986 Medicaid Consumer Survey. Fortunately, the data was already in a clean format, thus requiring no further cleaning, other than converting some variables into indicator variables. No missing values were encountered which was great because this meant our confidence levels for our analysis increased, and the time we would have used for wrangling data was directed towards interpretation. We implemented simple, multiple linear regression (MLR) and logistic regression in order to build a model using access as our response variable with the rest of our variables as explanatory variables. After analyzing models that would help us answer our research question, "How does ethnicity impact access to health services?", we wanted to look at the effect the rest of our variables might have on access to health care services.
+
+We ran simple and multiple regression models to understand the effect that ethnicity has on access to health services. We then took at an over arching perspective to understand the important predictors for access to health care services that makes sense for our data and taking the time that the survey was taken into account. We looked for the best model for access to health services using step wise selection with the AIC criterion, along with k-fold cross-validation approach to best subsets in order to see the improvement between the two approaches. We shrank our model in order to select important variables using lasso and ridge regression. After defining our explanatory variables as X and our response variable as y, we fit lasso and ridge regression estimates over a sequence of tuning parameters lambda. A normal linear regression job is to minimize root mean square error but as the number of predictors increases, the level of complexity increases and the model will overfit the data. So by using lasso and ridge regression we were able to minimize root mean square by also adjusting for our coefficients. In our lasso regression plot we are minimizing mean square error, as well as multiplying by lambda or penalty to the absolute value of the sum of our coefficients, hence forcing our coefficients to go to zero, which is what we see on our plot (Figure 7). On the top x axis of our plot it shows us the number of coefficients that are non-zero and as the number of lambda increases, the more coefficients that are zero increase. The coefficients that go to zero have the least additional information to our response variable. Our y axis shows us the value of our coefficient and lower x axis shows us the log lambda values. We can then calculate the importance of our coefficients that would help us select the best predictors for our best model.
+
+Next, we created two final models one based on our setpwise model selection and another based on our lasso regression. We checked for Variance inflation factors (VIF) to see if there was any multicollinearity among the selected variables. After building the model, model assumptions (linearity, constant variance, normality, independence) and evaluation metrics (R-squared, Adjusted R-squared, AIC) are assessed for model accuracy. Finally, we constructed confidence intervals to interpret the models.
+
+We wanted to try addressing our second research question, "How does access differ based on gender and ethnicity", using a logistic regression by transforming access into a categorical variable (1 and 0, 1 indicating high access and 0 indicating low access). We ran a logistic regression model to explore the effects of these variables as well as their interaction. 
+
+# Results
+
+The correlation plot (Figure 1: correlogram) indicates that access has a slight correlation with age, children, health1 and health2 with correlation coefficients less than +/- 0.4. Positive correlations are displayed in Blue and negative correlations are displayed in Red. The intensity of the correlation (how high or low it is, is shown by the size of the circle). Figure 4 through 5 shows us interactive reactions between income, visits, and first principal component health status (calculated based on functional limitation, chronic condition and acute conditions) with ethnicity. This simple explanatory data analysis guided us to the models we wanted to create.
+
+```{r, include = FALSE}
+
+Medicaid1986 <- Medicaid1986 %>%
+  mutate(ethnicity = ifelse(ethnicity == "other", 1, 0),
+         gender = ifelse(gender == "female", 1, 0), 
+         married = ifelse(married == "yes", 1, 0), 
+         enroll = ifelse(enroll ==  "yes", 1, 0), 
+         program = ifelse(program ==  "afdc", 1, 0), 
+         income = income/1000)
+
+
+cor_matrix <- Medicaid1986 %>%
+ dplyr::select(access, visits, age, children,exposure,income,health1,health2,school) %>%
+  cor()
+```
+
+```{r, echo=FALSE, fig.height=3, fig.align='left'}
+
+corrplot(cor_matrix, 
+           method = "circle",
+  type = "upper",
+  main = "Figure 1 correlogram",
+  addshade =  "all",
+  diag = TRUE
+)
+```
+
+```{r, echo=FALSE, fig.height=2, fig.width=8, fig.align='left'}
+#EDA for interactions 
+Medicaid1986 <- Medicaid1986 %>%
+  mutate(gender = ifelse(gender == 1, "female", "male"), 
+         ethnicity = ifelse(ethnicity == 1, "other", "cauc"))
+
+ggplot(data = Medicaid1986, aes(x = access, fill = ethnicity)) +
+  geom_density(position = 'fill', alpha = 0.5)+
+  xlab("Access availability (ranges from 1 to 0: 1 being high and 0 indicating low access to health services)")+
+  ylab("Proportion")+
+  labs(title = "Figure 2 Conditional density plot: Conditional density Plot of access by Ethnicity")
+
+
+```
+
+```{r, echo= FALSE, fig.height=2, fig.width=8, fig.align='right'}
+
+library(gridExtra) 
+plot_2 <- ggplot(Medicaid1986, aes(x = income , y = access, color = ethnicity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  xlab("Annual income per household") + ylab("Access to health services") +
+  labs(title = "Figure 3 Scatterplot: Access of health 
+       serices based on income and ethnicity ")
+plot_3 <- ggplot(Medicaid1986, aes(x = visits , y = access, color = ethnicity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  xlab("number of visits to the doctor") + ylab("access to health services ")+
+  labs(title = "Figure 4 Scatterplot: Access to 
+       health services based on number of visits
+       to the doctor and ethnciity ")
+grid.arrange(plot_2, plot_3, nrow = 1)
+```
+
+From Figure 3 we are able to see that there is an intersection between income and ethnicity. For a low annual household income we have almost the same level of access to health services but as income gradually increases access to health services differs based on ethnicity. For Caucasians we see a slightly higher access to health services. Figure 4 shows us an intersection between number of doctor visits and ethnicity. The same case here for a low number of doctor visits we can see a low access to health services for both group of ethnicity. As the number of doctor visits increase access to health services differs, with a higher access to other group of ethnicity than Caucasians.
+
+```{r, echo=FALSE, fig.height=2,fig.width=8,fig.align='right'}
+plot_4 <- ggplot(Medicaid1986, aes(x = exposure , y = access, color = ethnicity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  xlab("exposure (length of observation)") + ylab("access to health services")+
+  labs(title = "Figure 5 Scatterplot: Access to health services
+       based on exposure (length of 
+       observation period 
+       for ambulatory care) and ethnicity")
+
+plot_5 <- ggplot(Medicaid1986, aes(x = health1 , y = access, color = ethnicity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  xlab("health status 1st principal component") + ylab("access to health services") +
+  labs(title = "Figure 6 Scatterplot: Access to health
+       services based on health status
+       and ethnicity")
+grid.arrange(plot_4, plot_5, nrow = 1)
+```
+
+Figure 5 shows us the relationship between length of observation and ethnicity to determine access to health services. From our plot we can see that Caucasians have lower access to health services for low length of observation. As the length of observation increases the difference in access to health services between the two groups of ethnicity decreases. We also wanted to look at the relationship between first component health status and ethnicity to determine access to health services. First component health status looks into the three health status variables which are functional limitation, acute conditions and chronic condition. As health status of an individual goes up, if they are complex patients with two or more chronic conditions where their conditions may influence the care of the other, this indicates that access to health services decreases, but we don't see any significant difference between the two group of ethnicity.
+
+```{r, include = FALSE}
+
+model1 <- lm(access~ethnicity, data = Medicaid1986)
+summary(model1)
+
+model2 <- lm(access~ethnicity+income, data = Medicaid1986)
+summary(model2)
+
+model3 <- lm(access~ethnicity+income+ethnicity:income, data = Medicaid1986)
+summary(model3)
+
+confint(model3)
+model4 <- lm(access~ethnicity+health1+ethnicity:health1, data = Medicaid1986)
+summary(model4)
+
+model5 <- lm(access~ethnicity+exposure+ethnicity:exposure, data = Medicaid1986)
+summary(model5)
+
+model6 <- lm(access ~ visits + exposure + ethnicity:visits, data = Medicaid1986)
+summary(model6)
+
+```
+
+Using the information we got from our explanatory data analysis we conducted simple and multiple regression analysis using access as the response variable and ethnicity, income, number of doctor visits and exposure (length of observation period for ambulatory care) as our explanatory variable. As well as including interaction terms between ethnicity and the rest of the variables mentioned. 
+
+Our first model had access of health services as our response variable and used ethnicity as our explanatory variable. For a non Caucasian the predicted access to health services was 0.3933 while for a Caucasian it was 0.400203. There doesn't seem to be any significant difference in access to health services among the two groups. 
+
+Our second model looks at ethnicity and income. For a Caucasian with zero annual household income access to health services is 0.398518, while for other ethnicities it is 0.391471. The expected annual household income decreases by 5,164 dollars for other ethnicity compared to an increase of 6,156 dollars for Caucasians. We are 95% confident that access to health care services for other ethnicity is between -0.0589 to 0.06406. 
+
+The third model displayed Access as the response variable and ethnicity and income as explanatory variables, and the interaction between them. We can expect that for a non-white people with no income, the average access to be 0.395; that is access will be quite low. For every other ethnicity, we can expect access to healthcare to increase by 0.0025. For every additional dollar increase we can expect access to healthcare to increase by 0.0006. For every Caucasian and for every additional dollar, we can expect a decrease in access by 0.001. 
+
+Model 4 predicts that for Caucasians, with no health component, we can expect the average amount of access to be 0.400. For every other ethnicity, we can expect the average access decrease by 0.008, holding all other variables constant. For an additional increase in the first health component, we can expect the average access to decrease by 0.009, holding all other variables constant. For every other ethnicity, and for every additional first health component, we can expect access to decrease by 0.005.
+
+Model 5 predicts that for Caucasians, with no exposure, we can expect the average amount of access to be 0.435. For every other ethnicity, we can expect the average access to decrease by -0.2025125, holding all other variables constant. For an additional increase in exposure, we can expect the average access to decrease by 0.0003, holding all other variables constant. For every other ethnicity, and for every increment in exposure, we can expect access to decrease by 0.0018.
+
+Model 6 predicts that for Caucasians, with no exposure, we can expect the average amount of access to be 0.369. For every increase in the number of visits, holding all other variables constant, we can expect access to increase by 0.00113. For every additional increase in exposure, we can expect access to increase by 0.0002, holding all other variables constant. For every other ethnicity and for every additional visit, we can expect the access levels to increase by 0.0013.
+
+With a p-value higher than 0.05 for all of our models, we fail to reject our null hypothesis that indicates that there is association among our selected variables and access to health service i.e, our results are not significant. So we proceeded to conduct another multiple linear regression for Access and the rest of our predictor variables after evaluating for shrinkage and model selection, in order to see how well the explanatory variables explain access. We used step wise model selection to evaluate our most important predictors. Our model picked out visits, first principal health component, second principal health component, enroll in demonstration program and program that indicates the type of demonstration program that the respondent was part of. Holding first and second principal health component constant for every 1 unit increase in number of doctor visits access to health services increase by 0.000279.Same thing goes for second component health status and enrollment in managed demonstration program, a one unit increase in health status increases access to health services by 0.0194 while an enrollment increases access to health services by 0.0749 holding variables that are not evaluated constant.   
+
+We checked for Variance Inflation factor and got results below 1.1 for all our variables, indicating a low level multicollinearity. From our residual panel we can check for linearity, independence and normality. According to the residual plots, our model meet the assumption of linearity, constant variance, and normality. Although we got a low R-squared values (R-squared and adjusted R-squared > 0.06).
+
+```{r, include=FALSE}
+#step wise 
+
+library(MASS)
+
+model0 <- lm(access~ 1, data = Medicaid1986) 
+summary(model0)
+model1 <- lm(access ~ ., data = Medicaid1986) 
+summary(model1)
+
+step.both <- stepAIC(model1, direction = "both", trace = FALSE)
+summary(step.both)
+```
+
+```{r, include=FALSE}
+resid_panel(step.both)
+vif(step.both)
+```
+
+The final model generated from our stepwise selection is: $$ \hat{Access}={0.37169}+{0.002795}visits{-0.011006}health1+
+{0.019428}health2+{0.074956}enroll-{0.032573}program$$
+
+
+
+
+```{r,  include =FALSE}
+
+### Overview: lasso vs. ridge regression ###
+
+# Trim off first column (intercept), leaving only the 10 predictors
+X <- model.matrix(access ~ visits + health1+health2+enroll+program, Medicaid1986)[,-1] 
+
+# Create numeric vector of responses
+y <- as.numeric(Medicaid1986$access) 
+
+# Choose a custom range for lambda: 1/100 to 1000
+lambdas <- 10^seq(-3, 1, length = 100)
+
+ridge_mod <- glmnet(X, y, alpha = 0, lambda = lambdas)
+lasso_mod <- glmnet(X, y, alpha = 1, lambda = lambdas)
+
+
+fit_lasso_cv <- cv.glmnet(X, y, alpha = 1, nfolds = 5)
+plot(fit_lasso_cv)
+fit_lasso_cv$lambda.min
+fit_lasso_cv$lambda.1se
+predict(fit_lasso_cv, X, s = "lambda.1se")[1:10]
+
+
+fit_ridge_cv <- cv.glmnet(X, y, alpha = 0, nfolds = 5)
+plot(fit_ridge_cv)
+fit_ridge_cv$lambda.min
+fit_ridge_cv$lambda.1se
+
+predict(fit_ridge_cv, X, s = "lambda.1se")[1:10]
+plot(fit_ridge_cv, xvar = "lambda", label = TRUE)
+num_preds <- 9
+
+b1 = as.matrix(coef(fit_ridge_cv, s = "lambda.min"))
+b2 = coef(fit_ridge_cv, s = "lambda.1se")[1:(num_preds+1)]
+b3 = coef(fit_lasso_cv, s = "lambda.min")[1:(num_preds+1)]
+b4 = coef(fit_lasso_cv, s = "lambda.1se")[1:(num_preds+1)]
+cbind(b1, b2, b3, b4)
+
+```
+
+```{r, echo=FALSE, fig.height=3,fig.width=5,fig.align='right'}
+plot(lasso_mod,xvar="lambda", label = TRUE, xlab = "log lambda", ylab="coefficient values", sub = "Figure 7 lasso plot: shrinkage to find important predictors")
+```
+
+According to Figure 7, when lambda reaches its optimal value, the number of predictors utilized for predicting access to health services decreases to just one. In contrast to the remaining predictors, this particular predictor provides crucial supplementary information required for accurately predicting access to health services. The residual plots for this model meets the assumption of linearity, constant variance, and normality (with a slight skew on the left tail and unimodal points). For this model we have a lower R-squared values (R-squared and adjusted R-squared > 0.04).
+
+```{r, include=FALSE}
+fm <- lm(access~enroll, data =Medicaid1986)
+summary(fm)
+resid_panel(fm)
+```
+
+
+
+The final model generated from our lasso regression selection was: $\hat{Access}={0.38419}+{0.02827}enroll$. This model was generated after accounting for one standard error rule. And for a respondent that is enrolled in a managed demonstrated program (medicaid) the access to health services increases by 0.41246. 
+
+
+
+```{r,echo=FALSE, fig.height=2,fig.width=8,fig.align='right' }
+#EDA For Access, Ethnicity and Gender
+ggplot(Medicaid_new, aes(x = gender, y = access, fill = ethnicity)) +
+  geom_boxplot() +
+  coord_flip()+
+  scale_y_continuous(labels = scales::comma)+
+ xlab("Gender of respondant") + ylab("access to health services") +
+  labs(title = "Figure 8 Scatterplot: Access to health
+       services based on gender
+       and ethnicity")
+
+```
+
+```{r, include=FALSE}
+favstats(access ~ gender + ethnicity, data = Medicaid_new)
+```
+
+Figure 8 reveals the inter-sectional relationship between gender and ethnicity to access of health services. Males (from both groups of ethnicity: Caucasian and other) in addition to Caucasian females are shown to have a higher level of access to health services than females from other ethnicity. We wanted to switch things up and and use a logistic regression by changing access to an indicator variable of 1 and 0, where 1 indicates high access to health service and 0 indicates low access to health services. We fit a a multiple logistic regression with access to healthcare as the response variable. 
+
+Table 2 below summarizes the Estimate, Standard Error, and P-value of the variables.
+
+```{r, include= FALSE}
+gender_ethnicMDL <- glm(access_int ~ ethnicity + gender, data = Medicaid_new, family = binomial)
+summary(gender_ethnicMDL)
+
+exp(gender_ethnicMDL$coefficients)
+
+exp(gender_ethnicMDL$coefficients[1]) / (1 + exp(gender_ethnicMDL$coefficients)[1])
+```
+
+**Table 2: Summary of key variables for logistic regression:**
+
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Coefficients     & estimate         & std.error        & t value        & Pr(>|t|)   \\ \hline
+(Intercept)        &  -0.460711             & 0.122279           & -3.768        & 0.000165  \\ \hline
+ethnicitycaucasian        & 0.076694      & 0.141071     & 0.544        & 0.586680   \\ \hline
+gendermale    & 0.001533            & 0.179828           & 0.009      & 0.993199  \\ \hline
+\end{tabular}
+
+The model is below: $$ \hat{Access}={0.461}+{0.077}ethnicitycaucasian+{0.001}gendermale$$
+
+-   $\hat{\beta}_0 = -0.461$. The estimated log odds of having access to health care for any ethnicity and any gender is -0.46. This corresponds to a probability of .631. ($\frac{e^{-0.461}}{1 + e^{-0.461}}$).
+
+-   $\hat{\beta}_1 = 0.077$ and $e^{\hat{\beta}_1} = 1.080042$. After controlling for gender, a Caucasian  is expected to have a 0.077 increase in the odds of having access to healthcare.
+
+-   $\hat{\beta}_2 = 0.001$ and $e^{\hat{\beta}_2} = 1.001001$. After controlling for ethnicity, a man has 0.001 times higher odds of having access to healthcare than a woman.
+
+We want to test $H_0: \beta_1 = 0$ vs. $H_a: \beta_1 \neq 0$. We don't have a statistically significant evidence (t(22) = 0.979, p = 0.328) that tells us that access of health decreases on average, when looking at other ethnicity other than Caucasian. So ethnicity might not be a useful predictor of access of health services.
+
+```{r, include = FALSE}
+# Run the reduced model (without gender)
+model8 <- glm(access_int ~ gender + ethnicity, data = Medicaid_new, family = binomial)
+summary(model8)
+
+model8a <- glm(access_int ~ ethnicity, data = Medicaid_new, family = binomial)
+summary(model8a)
+summary(model8)
+
+# Compare reduced and full models with drop-in-deviance / nested G test
+anova(model8a, model8, test = "Chisq")
+```
+
+We do not have statistically significant evidence at the .05 level (G = 0.000072655, p = .993) that gender is associated with the odds of getting access to healthcare after accounting for ethnicity. Model 8 is not better than model8a. We added an interaction variable between gender and ethnicity to our model to see if they would both be significant predictors for access.
+
+```{r, include=FALSE}
+# Add interaction to model9
+model9 <- glm(access ~ gender + ethnicity + gender:ethnicity, 
+              family = binomial, data = Medicaid_new)
+summary(model9)
+```
+
+*There was no significant evidence that either the main effects or interactions between gender and ethnicity were useful in predicting patients' access to healthcare.*
+
+# Discussion
+
+From our final models we saw that first component health status, second component health status, enrollment, visits and program are good predictors of access to health services. From the initial modeling we saw that ethnicity and gender are not good predictors for access to health services for our data set. These results were surprising to say the least. For one, studies we considered before starting our EDA led us to believe that ethnicity and gender would have an impact on the access levels to healthcare and thus explaining the lack of utilization and satisfaction in Medicaid users. In addition to this, our data was already cleaned and all variables were transformed as needed in the EDA portion of our investigation. And because of that fact, we still wanted to look at the important predictors for access to health care.
+
+We found that first and second principal health component of health status are definitely good predictors of access to health services. As mentioned before it takes the three health status variables into account, which are functional limitations, acute condition and chronic conditions. Functional limitation is the ability of a person to see, hear, their mobility, communication skill, cognition and self care. Chronic conditions are medical conditions that take a longer time period for the individual to recover from, while acute conditions are short term and less medical attention than a chronic condition. Potential health effects of low health care access include poor management of chronic disease and increased risk of being sick. 
+
+From Table 1, we can see that enroll indicates whether the respondent is part of the demonstration program or in the fee for service program. The only difference between these two groups is the way the health service is managed and how their reimbursement work. In a managed care demonstration program, healthcare services are managed and coordinated by a designated healthcare organization, while in a fee-for-service payment model, providers are paid for each service they provide. For individuals enrolled in the managed care demonstration program is intended to have a higher level of access. Which brings us to the entire point of medicaid giving access to health care services for individuals and being part of managed demonstration program satisfies that goal. Number of doctor visits is also good determinant for access to health services. Logically if a respondent has a high number of doctor visits it reflects on the their engagement with health care system as well as their utilization. 
+
+We should recognize that our study had a significant limitation; the data is from 1986. Hence why ethnicity and gender might not have been good predictors of Access to healthcare, despite peer reviewed articles stating they can affect a patient's access to healthcare.Additionally, it can also be assumed that Medicaid was doing it's intended job. Allyson Hall wrote a paper on Medicaids impact on access to and utilization of health care and concluded that medicaid was in fact successful at improving access to health care.
+
+ It is worth exploring these variables again in more recent times, because we suspect less data was collected from an expansive source. The data was a Medicaid consumer survey from two sites in California (Santa Barbara and Ventura counties), because of this it is limiting our chances of generalizing our finding or lack there of. Especially in situations with NIH (National institute of health) only establishing their policy for women to be able to participate in research studies starting in 1986 (NCBI, 1985). Health care is a very complex topic, and conducting an analysis based on a survey from two sites (from one states) has its limitation because of how unique one state can be. Difference in policies in different states can cause bias in our study, which would then not deter us from accuracy.  
+ 
+
+
