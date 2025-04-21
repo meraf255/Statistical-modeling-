@@ -8,4 +8,5 @@ This repository contains a Power BI dashboard exported as a PDF.
  
 [PDF screenshot](https://github.com/meraf255/Statistical-modeling-/raw/main/Demo%20for%20DQ%20interview%20(round%201).pdf)
 
-[Bay County Box trutle project paper](https://github.com/meraf255/Statistical-modeling-/blob/main/Bay%20County%20Box%20Turtle%20Project%20.pdf)
+[Bay County Box trutle project paper]([https://github.com/meraf255/Statistical-modeling-/blob/main/Bay%20County%20Box%20Turtle%20Project%20.pdf](https://github.com/meraf255/Statistical-modeling-/raw/main/Bay%20County%20Box%20Turtle%20Project%20.pdf
+)
