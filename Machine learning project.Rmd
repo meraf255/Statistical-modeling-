@@ -1,0 +1,640 @@
+---
+title: "Challege_1_Final"
+author: "MRMI"
+date: "3/19/2023"
+output: pdf_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE)
+library(tidyverse)
+library(tidymodels)
+library(caret)
+library(dslabs)
+library(discrim)
+tidymodels_prefer(quiet=TRUE)
+```
+# Dataset crreation and our approach
+
+The first two chunks of code call in the dataset mnist, and filter the data so that only twos and fours are included in the new list "num_list". A list for the information for all sixes is also created. The subset_mnist takes in data and the desired digit. After that, an index of the desired number is created to filter out the right images. 
+
+```{r echo=TRUE}
+mnist <- read_mnist("~/Mscs 341 S23/Class/Data")
+```
+
+```{r}
+subset_mnist<- function(data, digit) { #function to subset the data (labels and images) for a specific digit. 
+  idx <- mnist$train$labels==digit
+  num<- mnist$train$images[idx,]
+  num_label<- rep(digit, nrow(num))
+  num_list<- list(num, num_label)
+  names(num_list) <- c("images", "label")
+  return(num_list)
+}
+
+num_list2<- subset_mnist(mnist, 2) #creating dataset for labels and images for digit 2. 
+num_list4<- subset_mnist(mnist, 4) #creating dataset for labels and images for digit 4.
+num_list6<- subset_mnist(mnist, 6) #creating dataset for labels and images for digit 6. 
+
+num_images<- rbind(num_list2$images, num_list4$images) #combining the images for the digits 2 and 4.
+num_labels<- c(num_list2$label, num_list4$label) #combining the labels for the digits 2 and 4.
+
+num_list<- list(num_images, num_labels) #num_list is images and labels of the digits 2 and 4 combined
+names(num_list) <- c("images", "label") #changing the labels of the columns. 
+```
+
+The function "count_empty()" counts the number of pixels that have no ink in them for each image. The function "empty()" creates the new tibble with the information derived from the count_empty() function. 
+
+```{r}
+count_empty <- function (image){
+  empty_pixels <- length(which(image == 0))
+  return(empty_pixels)
+}
+
+empty <- function(data) {
+  empty<- vector(length = nrow(data$images), mode = "integer")
+  label<- vector(length = nrow(data$images), mode = "integer")
+  for(i in 1:length(empty)){
+    empty[i] <- count_empty(data$images[i,])
+    label[i] <- data$label[i]
+  }
+  return(tibble(label, empty))
+} 
+
+empty<- empty(num_list) %>%
+  mutate(label = as.factor(label))
+
+ggplot(data = empty) +
+  geom_boxplot(aes(label, empty, color = label))
+
+ggplot(data = empty) +
+  geom_histogram(aes(x = empty)) +
+  facet_grid(~label)
+
+```
+
+Here the data is reduced to 1000 observations, and the training and testing data are split.
+
+```{r}
+set.seed(12345)
+empty<- sample_n(empty, 1000)
+
+empty_split <- initial_split(empty, prop=0.8)
+empty_train_tbl <- training(empty_split)
+empty_test_tbl <- testing(empty_split)
+```
+
+The create_model() function takes in a specification, recipe, and the tibble we want to base the model off of. 
+
+```{r}
+create_model <- function(spec, recipe, tbl) {
+  digit_wflow <- workflow() %>%
+    add_recipe(recipe) %>%
+    add_model(spec) 
+
+  fit(digit_wflow, tbl)
+}
+
+library(discrim)
+lda_model <- discrim_linear() %>%
+  set_engine("MASS") %>%
+  set_mode("classification")
+
+recipe<- recipe(label ~ empty, data= empty_train_tbl)
+
+fit_empty<- create_model(lda_model, recipe, empty_train_tbl) %>%
+  augment(empty_test_tbl)
+
+fit_empty<- fit_empty %>%
+  pivot_longer(cols = c(.pred_2, .pred_4), values_to = "prob")
+
+ggplot(data = fit_empty) + 
+  geom_line(aes(empty, prob, color = name))
+```
+
+```{r}
+class_metric <- metric_set(accuracy, sens, spec) 
+
+fit_empty %>%
+  class_metric(label, estimate =.pred_class)
+
+fit_empty %>%
+  accuracy(label, estimate = .pred_class)
+```
+The accuracy of the discrim_linear empty model is .68, which means it has a misclassification rate of .32
+```{r}
+#Misclassified Numbers 
+#Pivot wider the fit_empty so that there are less rows
+temp_empty_fit <- fit_empty %>%
+  group_by(name) %>%
+  mutate(row = row_number()) %>%
+  pivot_wider(names_from = name, values_from = prob)
+
+#Pick out the rows that are misclassified
+empty_misclass <- temp_empty_fit %>%
+  filter(label!=.pred_class)
+
+#Graph the misclassified 
+empty_misclass %>%
+  ggplot(aes(.pred_2, .pred_4, color=label)) +
+  geom_point()
+```
+These are all misclassified points in the graph here, since the predicitions are above 50 percent, for the label of the opposite number.
+
+
+
+
+
+```{r}
+#second model
+
+Qda_spec <- discrim_quad() %>%
+  set_engine("MASS") %>%
+  set_mode("classification")
+
+
+
+Qda_empty<- create_model(Qda_spec, recipe, empty_train_tbl) 
+  
+
+augment(Qda_empty, empty_test_tbl)%>%
+  accuracy(label, estimate = .pred_class)
+
+
+```
+
+The QDA model has an accuracy of .765, which means that its misclassification rate is .235, which is better than the linear_discriminate model which had a misclassificaiton rate of .32 . This is the better model.
+
+##CONFUSION MATRIX
+```{r}
+
+ augment(Qda_empty, empty_test_tbl)%>%
+  conf_mat(label, estimate = .pred_class)
+```
+
+## VISUALIZATION
+
+## PLOTTING ACROSS A GRID
+
+```{r}
+ grid_tbl <-  expand_grid(
+                         empty=seq(500,700,1))
+
+grid_tbl <- create_model(Qda_spec, recipe, empty_train_tbl) %>%
+  augment(grid_tbl)
+
+grid_tbl <- grid_tbl %>%
+  pivot_longer(cols =c(.pred_2, .pred_4), values_to="prob") 
+
+grid_tbl %>% ggplot(aes(x=empty, y=prob, color=name, z=prob)) +
+  geom_point(aes(y=prob))
+
+```
+The decision boundary would be whichever line is highest at the given empty value.
+
+## PLOTTING THE MISCLASSIFIED
+```{r}
+
+qda_fit <- Qda_empty %>%augment(empty_test_tbl)
+
+#Pick out the rows that are misclassified
+qda_misclass <- qda_fit %>%
+  filter(label!=.pred_class)
+
+#Graph the misclassified 
+qda_misclass %>%
+  ggplot(aes(.pred_2, .pred_4, color=label)) +
+  geom_point()
+
+```
+
+
+The majority of the misclassified digits have probabilites around .5, however there are some outliers on either end where the probability of it being a 2 or 4 is around .9, and it is still wrong.
+
+
+
+
+
+
+
+## changing things up
+
+## FEATURE 1
+```{r}
+num_images<- rbind(num_list2$images, num_list4$images, num_list6$images) #combining the images for the digits 2 and 4.
+num_labels<- c(num_list2$label, num_list4$label, num_list6$label) #combining the labels for the digits 2 and 4.
+
+num_list<- list(num_images, num_labels) #num_list is images and labels of the digits 2 and 4 combined
+names(num_list) <- c("images", "label") #changing the labels of the columns. 
+
+empty <- function(data) {
+  empty<- vector(length = nrow(data$images), mode = "integer")
+  label<- vector(length = nrow(data$images), mode = "integer")
+  for(i in 1:length(empty)){
+    empty[i] <- count_empty(data$images[i,])
+    label[i] <- data$label[i]
+  }
+  return(tibble(label, empty))
+} 
+
+empty <- empty(num_list) %>%
+  mutate(label = as.factor(label))
+
+empty<- sample_n(empty, 1000)
+
+empty_split <- initial_split(empty, prop=0.8)
+empty_train_tbl <- training(empty_split)
+empty_test_tbl <- testing(empty_split)
+
+new_qda_model <- discrim_quad() %>%
+  set_engine("MASS") %>%
+  set_mode("classification")
+
+recipe<- recipe(label ~ empty, data= empty_train_tbl)
+
+new_qda_fit_empty<- create_model(new_qda_model, recipe, empty_train_tbl) %>%
+  augment(empty_test_tbl)
+
+new_qda_fit_empty <- new_qda_fit_empty %>%
+ pivot_longer(cols = c(.pred_2, .pred_4, .pred_6), values_to = "prob")
+
+new_qda_fit_empty %>%
+  accuracy(label, estimate=.pred_class)
+
+fit_empty %>%
+  accuracy(label, estimate=.pred_class)
+
+
+new_qda_fit_empty %>%
+  conf_mat(label, estimate=.pred_class)
+
+```
+The accuracy of the model with 6's in is .49, meaning the misclassification rate is .51, which is still pretty decent since if there are now 3 possible answers, and a .33 would be if we were just guessing.
+
+The confusion matrix tells me that the model is thinking a lot of 6's are actually 2's, and a lot of 6's are 4's. 6 is by far the least accurate number.
+
+## PLOT FEATURE 1 WITH 6's MODEL PROBABILITIES ACROSS A GRID
+```{r}
+grid_tbl <-  expand_grid(
+                         empty=seq(500,700,1))
+
+grid_tbl <- create_model(new_qda_model, recipe, empty_train_tbl) %>%
+  augment(grid_tbl)
+
+grid_tbl <- grid_tbl %>%
+  pivot_longer(cols =c(.pred_2, .pred_4, .pred_6), values_to="prob") 
+
+grid_tbl %>% ggplot(aes(x=empty, y=prob, color=name, z=prob)) +
+  geom_point(aes(y=prob))
+
+```
+The decision boundary is whichever line is highest at the given empty value.
+
+
+## Plot FEATURE 1 WITH 6'S MODEL MISCLASSIFICATIONS
+```{r}
+new_qda_fit_empty %>%
+  filter(label!=.pred_class) %>%
+  ggplot(aes(x=empty, color=name)) +
+  geom_point(aes(y=prob)) +
+  facet_wrap(~label)
+```
+
+This graph is facet wrapped by what the numbers actually are. You can see how they are all misclassified because the probability of it being the correct number is always lower than some other numbers probability. 
+
+
+# Feature 2 
+
+
+```{r}
+subset_mnist<- function(data, digit) { #function to subset the data (labels and images) for a specific digit. 
+  idx <- mnist$train$labels==digit
+  num<- mnist$train$images[idx,]
+  num_label<- rep(digit, nrow(num))
+  num_list<- list(num, num_label)
+  names(num_list) <- c("images", "label")
+  return(num_list)
+}
+
+num_list2<- subset_mnist(mnist, 2) #creating dataset for labels and images for digit 2. 
+num_list4<- subset_mnist(mnist, 4) #creating dataset for labels and images for digit 4.
+num_list6<- subset_mnist(mnist, 6) #creating dataset for labels and images for digit 4. 
+
+num_images<- rbind(num_list2$images, num_list4$images) #combining the images for the digits 2 and 4.
+num_labels<- c(num_list2$label, num_list4$label) #combining the labels for the digits 2 and 4.
+
+num_list<- list(num_images, num_labels) #num_list is images and labels of the digits 2 and 4 combined
+names(num_list) <- c("images", "label") #changing the laebls of the columns. 
+```
+
+
+
+```{r}
+#function creating a matrix for each image taking in the image vector
+make_img_matrix <- function(dat, size = 28){
+  imag <- matrix(dat, nrow = size)[,28:1]
+  return(imag)
+}
+```
+
+This portion of the code creates a function that takes in a vector of size 784 that contains the pixel values in a digit image into a matrix.
+
+```{r}
+#function getting the x and y value to plot fot 1 image
+get_xy <- function(imagei){
+vecX <- c()
+vecY <- c()
+k = 1
+for (i in 1:28) {
+  
+  for (j in 28:1) {
+    val = imagei[i,j]
+    if(val != 0){
+      vecX[k] = i
+      vecY[k] = j
+      k = k + 1
+    }
+    
+  }
+  
+}
+img_df <- as.tibble(vecX)
+img_df <- mutate(img_df, vecX = value, vecY = vecY)
+img_df <- select(img_df, vecX, vecY)
+
+return(img_df)
+}
+```
+
+This portion of the code takes in a 28b by 28 matrix containing the image pixel values and then returns the row numbers (i.e. vecY) and column numbers (vecX) for each of the pixels containing a value other than 0. The reason to create this function is to be able to scatter plot the coordinates of the pixels and then fit a logistic regression model for each of the images in our dataset. The return value of this function is a data frame that returns the x and y coordinates in two different columbns.
+
+```{r}
+#creating the function to get the aic of the logictic model fitted to each image
+get_aic <- function(num_list){
+  aic_vec <- c()
+  n_images <- length(num_list$images[, 1])
+  for (i in 1:n_images) {
+    imagei <- make_img_matrix(num_list$images[i,])
+    img_df <- get_xy(imagei)
+    model <- glm(vecY ~ vecX, data = img_df)
+    aic_vec[i] = model$aic
+    
+  }
+  return(aic_vec)
+  
+}
+```
+
+This part of the code creates a function that takes in a list of labels and image vectors with pixel values and returns a vector with the AIC (Akaike Information Criterion) value for the regression model fit for each of the images' pixel coordinates. It takes in list of labels and image vectors of one specific digit at a time. The reason we are getting the aic value is so that we can compare the models that we fit using each images with each other. Since the logistic model used is a prediction model and not a classification model thats why we could not use the accuracy value for each model.
+
+```{r}
+#getting the dataset including aic using the function
+aic <- get_aic(num_list2) #running this will take 2-3 minutes
+num2_aic <- as.tibble(num_list2$label)|>
+  mutate(aic = aic, label = value)|>
+  select(aic, label)
+
+aic <- get_aic(num_list4) #running this will take 2-3 minutes
+num4_aic <- as.tibble(num_list4$label)|>
+  mutate(aic = aic, label = value)|>
+  select(aic, label)
+
+aic <- get_aic(num_list6) #running this will take 2-3 minutes
+num6_aic <- as.tibble(num_list6$label)|>
+  mutate(aic = aic, label = value)|>
+  select(aic, label)
+
+
+logisticfit_data <- bind_rows(num2_aic, num4_aic)|>
+  mutate(label = as.factor(label))
+
+```
+
+This portion of the code uses all the functions created above and creates the data frame with label and the aic value for each image. This data frame is then going to be divided into testing and training dataset.
+
+```{r}
+#reading in the dataset already created using the functions above 
+#label2_aic <- read_csv("~/Mscs 341 S23/Project/Madeline, Ryan, Meraf, Inti/digit2_aic_values.csv")
+#label4_aic <- read_csv("~/Mscs 341 S23/Project/Madeline, Ryan, Meraf, Inti/digit4_aic_values.csv")
+#combining the two digits
+#logisticfit_data <- bind_rows(num2_aic, num4_aic)|>
+#  mutate(label = as.factor(label))
+```
+
+```{r}
+#splitting the data into test and train
+set.seed(12345)
+logisticfit_sample <- sample_n(logisticfit_data, 1000)
+
+logistic_split <- initial_split(logisticfit_sample, prop=0.8)
+logistic_train_tbl <- training(logistic_split)
+logistic_test_tbl <- testing(logistic_split)
+```
+
+This part of the code takes in the dataframe created previously and splits it into training and testing dataset.
+
+
+# Model for feature 2
+
+## Splitting data into testing and training data: 
+
+```{r}
+#splitting the data into test and train
+set.seed(12345)
+logisticfit_sample <- sample_n(logisticfit_data, 1000)
+
+logistic_split <- initial_split(logisticfit_sample, prop=0.8)
+logistic_train_tbl <- training(logistic_split)
+logistic_test_tbl <- testing(logistic_split)
+```
+
+## Model creation, optimization and selection with cross validation
+
+
+```{r}
+#model 1 
+create_model <- function(spec, recipe, tbl) {
+  digit_wflow <- workflow() %>%
+    add_recipe(recipe) %>%
+    add_model(spec) 
+
+  fit(digit_wflow, tbl)
+}
+
+lda_model <- logistic_reg() %>%
+  set_engine("glm") %>%
+  set_mode("classification")
+
+recipe<- recipe(label ~ aic, data= logistic_train_tbl)
+
+fit_logistic<- create_model(lda_model, recipe, logistic_train_tbl)
+
+
+
+augment(fit_logistic, logistic_test_tbl)
+
+
+#tells us how many 2's were miss classified as 4's
+augment(fit_logistic, logistic_test_tbl)%>%
+  filter(label == "2",
+         .pred_class == "4")%>%
+  count()
+
+augment(fit_logistic, logistic_test_tbl)%>%
+  accuracy(label, .pred_class)
+
+augment(fit_logistic, logistic_test_tbl)%>%
+  conf_mat(label, .pred_class)
+
+
+
+```
+
+Looking at our results from our Linear Discriminant Analysis model the miss classification rate is 0.245. And our confusion matrix can further check what pairs of digits are getting missclassified the most. With a 75% accuracy these are really cool results.
+
+##Visualization 
+
+```{r}
+augment(fit_logistic, logistic_test_tbl)%>%
+  pivot_longer(4:5, names_to = "Pred", values_to = "Values")%>%
+  ggplot(aes(x = aic, y = Values, color = Pred))+
+  geom_line()
+```
+
+
+```{r}
+#model 2 
+#knn model with cross validation 
+
+library(tidymodels)
+library(kknn)
+tidymodels_prefer()
+
+
+
+
+knn_model <- nearest_neighbor(neighbors = tune()) %>%
+    set_engine("kknn") %>%
+    set_mode("classification")
+
+recipe<- recipe(label ~ aic, data= logistic_train_tbl)
+
+
+knn_wf <- workflow() %>%
+    add_recipe(recipe) %>%
+    add_model(knn_model) 
+
+
+set.seed(12345)
+digits_folds <- vfold_cv(logistic_train_tbl, v = 10)
+digits_folds
+split_val <- digits_folds %>%
+    filter (id=="Fold02") %>%
+    pull(splits)
+
+typeof(split_val)
+training(split_val[[1]])
+testing(split_val[[1]])
+
+
+
+neighbors_tbl <-  tibble(neighbors=seq(1,60, by=5))
+
+
+tune_results <- tune_grid(object = knn_wf, 
+                          resamples = digits_folds, 
+                          grid = neighbors_tbl)
+autoplot(tune_results)
+
+
+
+show_best(tune_results, metric = "accuracy")
+best_neighbor <- select_best(tune_results, metric = "accuracy")
+knn_final_wf <- finalize_workflow(knn_wf, best_neighbor)
+knn_final_fit <- fit(knn_final_wf, logistic_train_tbl)
+
+
+augment(knn_final_fit, logistic_test_tbl) %>%
+  conf_mat(label, estimate = .pred_class)  
+
+augment(knn_final_fit, logistic_test_tbl) %>%
+  accuracy(label, estimate = .pred_class)
+
+
+
+```
+
+ Looking at our results from the KNN cross validation Model, the missclassification rate is 0.27, and in the confusion matrix we can see the results played out in more detail. These were really cool results to get, as it shows that this model is pretty accurate for identifying the numbers.
+ 
+ 
+# Changing things up for feature 2 
+ 
+```{r}
+#adding 6
+logisticfit_data <- bind_rows(num2_aic, num4_aic, num6_aic)|>
+  mutate(label = as.factor(label))
+
+
+ggplot(logisticfit_data, aes(x=label, y=aic, fill=label)) +
+  geom_boxplot()
+```
+
+We can see from this box plot that 6 seems to be overlaping with 2 and 4. This can tell us that our accuracy might not be as good when adding 6 to our best fit model  
+ 
+```{r}
+
+create_model <- function(spec, recipe, tbl) {
+  digit_wflow <- workflow() %>%
+    add_recipe(recipe) %>%
+    add_model(spec) 
+
+  fit(digit_wflow, tbl)
+}
+
+lda_model <- multinom_reg() %>%
+  set_engine("nnet") %>%
+  set_mode("classification")
+
+set.seed(12345)
+logisticfit_sample_final <- sample_n(logisticfit_data, 1000)
+
+logistic_split_final <- initial_split(logisticfit_sample_final, prop=0.8)
+logistic_train_tbl_final <- training(logistic_split_final)
+logistic_test_tbl_final <- testing(logistic_split_final)
+
+
+
+recipe<- recipe(label ~ aic, data= logistic_train_tbl_final)
+
+fit_logistic<- create_model(lda_model, recipe, logistic_train_tbl_final)
+
+
+
+augment(fit_logistic, logistic_test_tbl_final)
+
+
+
+augment(fit_logistic, logistic_test_tbl_final)%>%
+  accuracy(label, .pred_class)
+
+augment(fit_logistic, logistic_test_tbl_final)%>%
+  conf_mat(label, .pred_class)
+
+
+```
+
+Once we add 6 our accuracy with our best fit model drops significantly to a missclassification rate of 0.435. We can see that 6 and 2 are the most often confused. Our next plot will further help us visualize. 
+ 
+ 
+## Visualaization 
+
+```{r}
+augment(fit_logistic, logistic_test_tbl_final)%>%
+  pivot_longer(4:6, names_to = "Pred", values_to = "Values")%>%
+  ggplot(aes(x = aic, y = Values, color = Pred))+
+  geom_line()
+```
+
+ 
