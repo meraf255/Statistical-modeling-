@@ -1,0 +1,390 @@
+---
+title: 'Spotlight: Predicition of health status among Medicaid Beneficiaries '
+author: "Meraf Haileslassie"
+output:
+  pdf_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+
+# Introduction 
+
+Medicaid, a program enacted in 1965, is a federal and state initiative that orders healthcare coverage to individuals and families with low incomes. Given that Medicaid beneficiaries are typically economically disadvantaged, and there is a well established link between poverty and poor health, the program serves as a vital safety net for many american without access to healthcare. 
+
+The data set we are going to examine comprises cross-sectional data on various variables associated with Medicaid beneficiaries. It contains health status variables like self-reported health status, chronic ailments, and disabilities, along with healthcare utilization variables like the number of physician visits. We can analyze these variables across different demographics, including age, gender, ethnicity, marital status, and household income of the beneficiaries.
+
+# Data Set 
+
+We obtained our data from a built in package in R called Applied Econometrics with R. Within this package we were able to extract Medicaid Utilization Data. Fortunately, the data was already in a clean format, thus requiring no further cleaning (except creating indicator variables for our categorical variables).
+
+
+\begin{tabular}{|l|l|l|}
+\hline
+Variables.      & Definition   \\ \hline
+Visits          & Number of doctor visits      \\ \hline
+Exposure        & Length of observation period for ambulatory care (measured in days)  \\ \hline
+Children                & Total number of children in the household  \\ \hline
+Age                & Age of the respondent \\ \hline
+Income               & Annual household income (average of income range in million USD) \\ \hline
+health1             & First principal component (divided by 1000) of three health-status variables: functional limitation, 
+
+acute conditions, and chronic conditions  \\ \hline
+health2              & Second principal component (divided by 1000) of three health-status variables: functional limitation, 
+
+acute conditions, and chronic conditions \\ \hline
+Access               & Availability of health services (0 = low access, 1 = high access) \\ \hline
+Married              & Is the individual married \\ \hline
+Gender              & Indicating gender\\ \hline
+Ethnicity             & Factor indicating ethnicity ("Caucasian" or "other") \\ \hline
+School               & Number of years completed in school \\ \hline
+enroll              & Is the individual enrolled in a demonstration program \\ \hline
+Program              & Factor indicating the managed care demonstration program: Aid to Families with Dependent Children 
+
+("afdc") or non-institutionalized Supplementary Security Income ("ssi"). \\ \hline
+\end{tabular}
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidymodels)
+tidymodels_prefer()
+library(glmnet)
+library(vip)
+
+library(AER)
+library(tidyverse)
+
+```
+
+We will use `tidymodels_prefer()` that will allow us to resolve known conflicts between different packages with the `tidymodels` package. Along with AER which contains our Medicaid utilization data. We will read in our data as a tibble. Our data set consists of 996 observations with 14 different variables, with a mixture of numeric and categorical variables. After reading our data set we will convert our categorical variables into indicator variables using an if else function. 
+
+```{r, include=FALSE}
+data("Medicaid1986")
+Medicaid1986<- as_tibble(Medicaid1986)
+
+Medicaid1986
+
+
+
+Medicaid1986 <- Medicaid1986 %>%
+  mutate(ethnicity = ifelse(ethnicity == "other", 1, 0),
+         gender = ifelse(gender == "female", 1, 0), 
+         married = ifelse(married == "yes", 1, 0), 
+         enroll = ifelse(enroll ==  "yes", 1, 0), 
+         program = ifelse(program ==  "afdc", 1, 0))
+```
+
+The first task in the creation of a model is to divide the data set into testing and training. We will create a split on the data using `initial_split` from `tidymodels` with 80% of the data going into our training data set and 20% going into our testing data set. We named our new data sets Med_train_tbl and Med_test_tbl respectively. In addition to this we will convert the indicator variable we created into a factor class  instead of them identified under  double precision class. 
+
+```{r, echo=FALSE}
+set.seed(123456)
+Med_split <- initial_split(Medicaid1986, prop = 0.8)
+
+Med_train_tbl <- training(Med_split)%>%
+  mutate(gender = as.factor(gender), 
+         married = as.factor(married), 
+         ethnicity = as.factor(ethnicity),
+         enroll = as.factor(enroll),
+         program = as.factor(program))
+ 
+
+Med_test_tbl <- testing(Med_split)%>%
+   mutate(gender = as.factor(gender), 
+         married = as.factor(married), 
+         ethnicity = as.factor(ethnicity),
+         enroll = as.factor(enroll),
+         program = as.factor(program))
+
+```
+
+We can then create a function that will help us visualize our testing and training data set. We will create a tibble `plot_Med_tbl` . By using the library `gridExtra` and creating smooth plot we are able to visualize the patterns between our response variable (which we will set as health1: first principal component of the three health status) and our potentially significant explanatory variable access and ethnicity. We will facet wrap ethnicity into our plot.
+
+
+```{r, echo=FALSE}
+plot_Med_tbl <- function (tbl) {
+ggplot(tbl, aes(access, health1))+
+  geom_point()+
+  geom_smooth(method=lm)+
+  facet_wrap(~ethnicity, nrow=2)
+}
+
+
+```
+
+```{r, echo=FALSE}
+library(gridExtra) 
+plot_train <- plot_Med_tbl(Med_train_tbl)
+plot_test <- plot_Med_tbl(Med_test_tbl)
+grid.arrange(plot_train, plot_test, nrow = 1)
+
+```
+Our plot shows us almost the same pattern between our testing and training data set, among the two different ethnicity groups that we have which is either Caucasian or other ethnicity. 
+
+# Linear model 
+
+First we will be using linear regression to create a model that given a value of variables from our data set will help us to predict the principal component of health status. We will create a model using `tidymodels`, we will first define the roles of our variables by using our recipe function. Followed by a model and how to implement it e.g set_engine= "lm". And lastly create a workflow that will combine our recipe and model and fit it to our training data set. 
+
+We will not have to  include step_dummy under our recipe tibble  because we have already transformed our categorical variables to indicator variables as a factor class in previous code chunk. But `step_dummy` is useful when creating indicator variables. 
+
+
+```{r}
+lm_model <- linear_reg() %>%
+  set_engine("lm")
+
+Med_recipe <- 
+  recipe(health1 ~ . , data=Med_train_tbl)
+ # step_dummy(married,gender,ethnicity,enroll,program) 
+
+lm_wflow <- workflow() %>%
+  add_recipe(Med_recipe) %>%
+  add_model(lm_model)
+lm_fit <- fit(lm_wflow, Med_train_tbl)
+```
+
+In order to obtain information about the fit of our model on the training data set we can use `pull` to take out the r squared of our linear regression model. Our R square value tells us how much variability our model is going to explain. In our case we get 15% variability for our training data set.
+
+```{r}
+glance(lm_fit)%>%
+  pull(r.squared) #to obtain information about the fit of the model on the training dataset.
+``` 
+ 
+ 
+```{r}
+extract_fit_parsnip(lm_fit) %>%
+  vip()
+
+top5 <- tidy(lm_fit) %>%
+  arrange(desc(abs(estimate))) %>%
+  filter(term != "(Intercept)")%>%
+  slice(1:5)
+
+top5
+``` 
+
+We can look at the most important predictors for this model using `extract_fit_parsnip`. Our top 5 most important predictors are program, access, gender, marital status and visits. 
+ 
+```{r}
+augment(lm_fit, Med_test_tbl) %>%
+ metrics(health1, .pred)
+```
+
+When comparing our model fit to our testing data set we get an r square of 8%. This shows that our model provides a poor fit to our testing data set and is not able to explain much of the variation of our response variable (health1). It is also giving us a root mean square error of 1.44, this tells us that on average the predicted values of the model differ from the actual values by 1.44 units. Lets try selecting variables that would create a better fit model that would increase our rsquare and lower our root mean square error.   
+
+# Model selection using Lasso
+
+In order to improve our model variability and decrease our root mean squared error we can use a model selection technique called the lasso regression. In a lasso regression  we are minimizing mean square error as well as multiplying by lambda or penalty to the absolute value of the sum of our coefficients. This forces our coefficients that don't bring additional information to our model to go to zero. 
+
+Since we will be using the step_nzv() that removes variables that has almost no variance because the variable wont be able to give more information if two variables has influence in each other.In order to use this function we need to transform all our predictors into number this includes the categorical variables we tweaked earlier. 
+
+
+```{r, echo=FALSE}
+Med_train_tbl <- Med_train_tbl %>%
+  mutate(age = as.numeric(age),
+         married = as.numeric(married),
+         ethnicity = as.numeric(ethnicity),
+         enroll = as.numeric(enroll),
+         program = as.numeric(program), 
+         gender = as.numeric(gender))
+Med_test_tbl <- Med_train_tbl %>%
+  mutate(age = as.numeric(age),
+         married = as.numeric(married),
+         ethnicity = as.numeric(ethnicity),
+         enroll = as.numeric(enroll),
+         program = as.numeric(program), 
+         gender = as.numeric(gender))
+```
+
+
+Just like earlier we will create a model and recipe and combine them in a workflow. Mixture indicates that we will be using a lasso regression, and penalty indicates lambda. Lambda is not an arbitrary number we would need to find the best fit lambda for our model that will minimize our rmse as well as tell us the most important predictor variables that is best suited for our model. By tuning our penalty/lambda and using cross validation we are able to find that best fit/ optimize lambda and select our model. 
+
+```{r}
+lasso_model <-
+ linear_reg(mixture = 1, penalty = tune()) %>%
+  set_mode("regression") %>%
+  set_engine("glmnet")  
+
+
+Med_lasso_recipe <-
+  recipe(health1 ~ ., data = Med_train_tbl) %>%
+  step_normalize(all_predictors())%>%
+   step_zv(all_numeric_predictors())
+
+
+lasso_wf <- workflow() %>%
+  add_recipe(Med_lasso_recipe) %>%
+  add_model(lasso_model)
+
+
+```
+
+We are going to create a grid  between -5 and -2 on the log-scale with 20 values. We then use  use tune_grid() and plot the effect of the penalty in the r squared of the LASSO model.
+
+
+```{r}
+set.seed(1234)
+Med_fold_5 <- vfold_cv(Med_train_tbl, v = 5)
+
+penalty_grid <-
+  grid_regular(penalty(range = c(-5, -2)), levels = 20)
+
+tune_res <- tune_grid(
+  lasso_wf,
+  resamples = Med_fold_5,
+  grid = penalty_grid
+)
+
+autoplot(tune_res, metric="rsq")
+```
+
+
+```{r}
+best_lasso_penalty <- select_by_one_std_err(tune_res, desc(penalty), metric = "rsq")
+
+final_lasso_wf <- finalize_workflow(lasso_wf, best_lasso_penalty)
+
+Med_fit <- fit(final_lasso_wf, Med_train_tbl)
+
+
+augment(Med_fit, Med_test_tbl)%>%
+  rsq(health1, .pred)
+
+
+augment(Med_fit, Med_test_tbl)%>%
+  rmse(health1, .pred)
+
+```
+
+Using the one standard error rule we select the optimal value of lambda that would reduce our root mean square error and increase the variability of our response variable health status. We get an r square of 15% and a root mean square error of 1.31. Our r square has increased by almost twice from our former value, and our rmse has decreased slightly. 
+
+We can select the top 5 most important variables by using the arrange function to select variables with a high absolute value coefficients as well as `extract_fit_parsnip`. 
+ 
+```{r}
+extract_fit_parsnip(Med_fit) %>%
+  vip()
+
+top5 <- tidy(Med_fit) %>%
+  arrange(desc(abs(estimate))) %>%
+  filter(term != "(Intercept)")%>%
+  slice(1:5)
+
+top5
+```
+ 
+ 
+We will pull these top 5 most important variables and create another lasso recipe based on only these features.
+
+
+# Lasso model with important variables
+
+We will use our lasso model from earlier this time only using the top 5 most important variables. We will create a different recipe indicting the variables we want to add to our model and build that into our workflow and tune grid inorder to obtain the optimized lambda value. 
+
+```{r, include=FALSE}
+Med_lasso_recipe2 <-
+  recipe(health1 ~ program+access+gender+married+visits, data = Med_train_tbl) %>%
+  step_normalize(all_predictors())%>%
+   step_zv(all_numeric_predictors())
+
+
+lasso_wf2 <- workflow() %>%
+  add_recipe(Med_lasso_recipe2) %>%
+  add_model(lasso_model)
+
+tune_res <- tune_grid(
+  lasso_wf2,
+  resamples = Med_fold_5,
+  grid = penalty_grid
+)
+
+best_lasso_penalty <- select_by_one_std_err(tune_res, desc(penalty), metric = "rsq")
+
+final_lasso_wf <- finalize_workflow(lasso_wf2, best_lasso_penalty)
+
+Med_fit <- fit(final_lasso_wf, Med_train_tbl)
+
+
+```
+
+```{r}
+augment(Med_fit, Med_test_tbl)%>%
+  rsq(health1, .pred)
+
+
+augment(Med_fit, Med_test_tbl)%>%
+  rmse(health1, .pred)
+```
+
+Testing our new model in our testing data set we get an r square of 8% and rmse of 1.36. Although our rmse has decreased from the original value, we can still do better for both terms. 
+
+# Random Forest model
+
+We have learnt that slightly different training data sets can result in different trees. By implementing "the wisdom of the crowd" taking their standard deviation of their average, will help us control for their error. In a random forest the more the merrier, as we add the number of trees our predicted values are less rugged.  
+
+We will optimize the trees and mtry parameters with cross validation.We set up our model, recipe and wflow switching for ranger package and a rand forest model. 
+```{r}
+forest_recipe <-
+  recipe(health1 ~ ., data = Med_train_tbl)
+forest_model <-
+  rand_forest(trees = tune(), mtry = tune()) %>%
+  set_mode("regression") %>%
+  set_engine("ranger", importance = "impurity")
+forest_workflow <-
+  workflow() %>%
+  add_recipe(forest_recipe) %>%
+  add_model(forest_model)
+```
+
+
+```{r}
+
+set.seed(123456)
+forest_folds <- vfold_cv(Med_train_tbl, v = 10)
+forest_grid <- grid_regular(trees(range = c(100,500)), mtry(range = c(1,10)), levels = 5)
+forest_tune_res <-
+  tune_grid(
+    forest_workflow,
+    resamples = forest_folds,
+    grid = forest_grid)
+best_params <- select_best(forest_tune_res, metric = "rsq")
+forest_final_wf <- finalize_workflow(forest_workflow, best_params)
+forest_final_fit <- fit(forest_final_wf, Med_train_tbl)
+```
+Just like before we will use our final fit to test on our testing data set and obtain our metric values. When using random forest we get a r square of 91% and a root mean square error of 0.476, definitely better than before. 
+```{r}
+ augment(forest_final_fit, Med_test_tbl) %>%
+  metrics(health1, .pred)
+```
+
+
+```{r}
+extract_fit_parsnip(forest_final_fit) %>%
+  vip()
+
+```
+
+Looking at the most important predictors, we see that health2 has the most importance along with age, visits and exposure. 
+
+# Conclusion  
+When looking at the most important predictors across the three models we have looked at, age and visits seem to be a common factor for all models. 
+
+Based on the order of importance we can set up a table of the different model we used and which gave us the best results in-terms of variability (proportion of variance in the dependent variable (access) that is explained by the independent variables in our regression models) and the deviance in the predicted values compared from the actual values.
+
+\begin{tabular}{|l|l|l|}
+\hline
+Model      & r square and rmse   \\ \hline
+linear          & 0.08 and 1.44          \\ \hline
+lasso             &   0.15 and 1.31        \\ \hline
+lasso with important variables   & 0.79 and 1.36.  \\ \hline
+Random forest       &    0.91 and 0.476       \\ \hline
+\end{tabular}
+
+# Citation 
+
+Clare C. Brown, Caroline E. Adams, Jennifer E. Moore, Race, Medicaid Coverage, and Equity in Maternal Morbidity, Women's Health Issues,Volume 31, Issue 3,
+2021.
+
+Hall, A.G. Medicaid's impact on access to and utilization of health care services among racial and ethnic minority children. J Urban Health 75, 677–692 (1998).
+
+https://rdrr.io/cran/AER/man/Medicaid1986.html
