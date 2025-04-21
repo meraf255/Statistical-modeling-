@@ -4,4 +4,4 @@ This repository contains a Power BI dashboard exported as a PDF.
 
 ## 📄 Files
 
-- [Dashboard Report (PDF)](MyDashboard_Report.pdf)
+- [Demo for DQ interview (round 1) (PDF)](Demo for DQ interview (round 1).pdf)
